@@ -76,7 +76,6 @@ setopt EXTENDED_HISTORY
 
 export PATH=$PATH:/home/iq/.local/bin
 export RUSTC_WRAPPER=sccache
-eval "$(register-python-argcomplete pipx)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
