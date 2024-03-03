@@ -1,0 +1,9 @@
+" Selected IntelliSpace modules
+source ~/.intellimacs/spacemacs.vim
+source ~/.intellimacs/extra.vim
+source ~/.intellimacs/major.vim
+source ~/.intellimacs/major.vim
+source ~/.intellimacs/which-key.vim
+
+nmap , <leader>m
+vmap , <leader>m
