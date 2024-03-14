@@ -2,12 +2,12 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
-set -x
+#set -x
 
 # ====== Variables =============================
 
-declare -A gaps
-declare -A color
+#declare -A gaps
+#declare -A color
 
 color["focused"]="0xE0808080"
 color["normal"]="0x00010101"
