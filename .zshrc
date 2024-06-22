@@ -54,6 +54,7 @@ alias ls='exa'
 alias vim='nvim'
 alias top='bottom'
 alias cat='bat'
+alias ggraph='git log --graph --decorate --oneline'
 alias screenAbove="xrandr --output HDMI1 --mode 1920x1080 --above eDP1"
 alias screenReset="xrandr -s 0"
 alias build="mkdir build; cd build; cmake ..; make -j 4; cd ../"
@@ -107,6 +108,9 @@ case "$(uname -sr)" in
     fi
     unset __conda_setup
 
+    export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+    #export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH
+    export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
     ;;
 
   Linux*)
