@@ -49,6 +49,7 @@ antigen apply
 export EDITOR="nvim"
 export TERM=xterm-256color
 
+
 alias sl='exa'
 alias ls='exa'
 alias vim='nvim'

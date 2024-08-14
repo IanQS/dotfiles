@@ -20,6 +20,10 @@ source ~/.intellimacs/spacemacs/compile-comments.vim
 let g:WhichKeyDesc_Errors = "<leader>e    +errors"
 source ~/.intellimacs/spacemacs/errors.vim
 
+
+let g:WhichKeyDesc_Errors = "<leader>d    +debug"
+source ~/.intellimacs/spacemacs/debug.vim
+
 let g:WhichKeyDesc_Files = "<leader>f    +files"
 source ~/.intellimacs/spacemacs/files.vim
 
