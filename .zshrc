@@ -55,6 +55,7 @@ alias ls='exa'
 alias vim='nvim'
 alias top='bottom'
 alias cat='bat'
+alias dumpCondaEnv='conda env export --no-builds > environment.yml'
 alias ggraph='git log --graph --decorate --oneline'
 alias screenAbove="xrandr --output HDMI1 --mode 1920x1080 --above eDP1"
 alias screenReset="xrandr -s 0"
