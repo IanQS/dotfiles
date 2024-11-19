@@ -39,6 +39,7 @@ antigen theme tweekmonster/nanofish nanofish
 
 # Plugins that exist outside oh-my-zsh so we have to specify the repo
 antigen bundle peterhurford/up.zsh
+antigen bundle "MichaelAquilina/zsh-you-should-use"
 antigen bundle esc/conda-zsh-completion
 antigen bundle jeffreytse/zsh-vi-mode
 
@@ -84,6 +85,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+
+source <(fzf --zsh)
+export FZF_COMPLETION_TRIGGER='~~'
 
 eval "$(zoxide init zsh)"
 . "$HOME/.cargo/env"
