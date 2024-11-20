@@ -34,17 +34,19 @@ antigen bundle sudo
 antigen bundle git
 antigen bundle colored-man-pages
 
-# Load the theme.
-antigen theme tweekmonster/nanofish nanofish
-
 # Plugins that exist outside oh-my-zsh so we have to specify the repo
 antigen bundle peterhurford/up.zsh
 antigen bundle "MichaelAquilina/zsh-you-should-use"
 antigen bundle esc/conda-zsh-completion
 antigen bundle jeffreytse/zsh-vi-mode
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load the theme.
+antigen theme tweekmonster/nanofish nanofish
+antigen theme https://gist.github.com/3750104.git agnoster
+antigen theme romkatv/powerlevel10k p10k
 
 # Tell antigen that you're done.
-antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
 export EDITOR="nvim"

@@ -361,8 +361,8 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
-set -g @named-snapshot-restore 'C-n:manual C-[:dev'
-set -g @named-snapshot-save 'C-m:manual C-]:dev'
+set -g @named-snapshot-restore 'C-\:dev'
+set -g @named-snapshot-save 'C-]:dev'
 
 # -- tpm -----------------------------------------------------------------------
 
