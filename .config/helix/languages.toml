@@ -1,18 +1,48 @@
 [[language]]
 name = "python"
-language-servers = ["basedpyright", "ruff"]
-formatter = {command = 'black', args = ["--quiet", "-"]}
+auto-format = true
+#language-servers = ["basedpyright", "ruff"]
+language-servers = [
+  { name = "ruff-lsp", only-features = [ "format", "diagnostics" ] },
+  { name = "basedpyright", except-features = [ "format", "diagnostics" ] },
+]
 
+########################################
+# https://docs.basedpyright.com/latest/configuration/language-server-settings/
+########################################
 [language-server.basedpyright]
 command = "basedpyright-langserver"
 args = ["--stdio"]
+config.reportMissingtypeStubs = false
 except-features = ["format", "code-action"]
 
 [language-server.basedpyright.config.basedpyright.analysis]
 autoSearchPaths = true
-typeCheckingMode = "basic"
-diagnosticMode = "openFilesOnly"
+diagnosticMode = "workspace" # "openFilesOnly"
+useLibraryCodeForTypes = true
+autoImportCompletions = true
+typeCheckingMode = "standard" #"recommended"
+disableTaggedHints = true
+
+
+
+########################################
+# https://docs.astral.sh/ruff/settings
+########################################
 
 [language-server.ruff]
 command = "ruff"
 args = ["server", "--preview"]
+preview = true
+show-fixes = true
+include = ["*.py"]
+fix = true  # TODO 
+
+[language-server.ruff.analyze]
+detect-string-imports = true
+
+[language-server.ruff.lint.pydocstyle]
+convention = "google"
+
+[language-server.ruff.format]
+skip-magic-trailing-comma = true
