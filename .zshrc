@@ -64,6 +64,7 @@ alias vim='nvim'
 alias top='bottom'
 alias cat='bat'
 alias dumpCondaEnv='conda env export --no-builds > environment.yml'
+alias cleanDeadSymlinks='for f in `find -L $DIR -maxdepth 1 -type l`; do unlink $f; done'
 alias ggraph='git-graph'
 alias screenAbove="xrandr --output HDMI1 --mode 1920x1080 --above eDP1"
 alias screenReset="xrandr -s 0"
