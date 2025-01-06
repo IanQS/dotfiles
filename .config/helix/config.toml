@@ -5,7 +5,8 @@ line-number = "relative"
 mouse = false
 cursorline = true
 true-color = true
-rulers = [120]
+rulers = [80]
+color-modes = true
 
 
 [editor.cursor-shape]
@@ -16,6 +17,9 @@ select = "underline"
 [keys.insert]
 "C-[" = "normal_mode"
 
+[editor.indent-guides]
+render = true
+
 [editor.auto-pairs]
 '(' = ')'
 '{' = '}'
@@ -23,3 +27,9 @@ select = "underline"
 '"' = '"'
 '`' = '`'
 '<' = '>'
+
+[editor.lsp]
+# Disable automatically popups of signature parameter help
+auto-signature-help = true
+# Show LSP messages in the status line
+display-messages = true

@@ -1,11 +1,13 @@
 [[language]]
 name = "python"
+language-id = "python"
 auto-format = true
-#language-servers = ["basedpyright", "ruff"]
-language-servers = [
-  { name = "ruff-lsp", only-features = [ "format", "diagnostics" ] },
-  { name = "basedpyright", except-features = [ "format", "diagnostics" ] },
-]
+language-servers = ["basedpyright", "ruff"]
+formatter = { command = "ruff", args = ["format", "-"] }
+file-types = ["py", "ipynb"]
+comment-token = "#"
+shebangs = ["python"]
+roots = ["pyproject.toml", "setup.py", "poetry.lock", ".git", ".jj", ".venv/"]
 
 ########################################
 # https://docs.basedpyright.com/latest/configuration/language-server-settings/
@@ -18,12 +20,11 @@ except-features = ["format", "code-action"]
 
 [language-server.basedpyright.config.basedpyright.analysis]
 autoSearchPaths = true
-diagnosticMode = "workspace" # "openFilesOnly"
+diagnosticMode = "workspace"  # "openFilesOnly"
 useLibraryCodeForTypes = true
 autoImportCompletions = true
 typeCheckingMode = "standard" #"recommended"
 disableTaggedHints = true
-
 
 
 ########################################
@@ -36,7 +37,11 @@ args = ["server", "--preview"]
 preview = true
 show-fixes = true
 include = ["*.py"]
-fix = true  # TODO 
+fix = true                     # TODO 
+
+[language-server.ruff.config.settings]
+lineLength = 80
+logLevel = "debug"
 
 [language-server.ruff.analyze]
 detect-string-imports = true
@@ -44,5 +49,35 @@ detect-string-imports = true
 [language-server.ruff.lint.pydocstyle]
 convention = "google"
 
-[language-server.ruff.format]
+[language-server.ruff.config.settings.lint]
+select = [
+  "E",
+  "F",
+  "W",
+  "B",
+  "I",
+  "RUF",
+  "N",
+  "SIM",
+  "LOG",
+  "ERA",
+  "W",
+  "D",
+  "UP",
+  "ANN",
+  "ASYNC",
+  "S",
+  "RET",
+  "TCH",
+  "ARG",
+  "PTH",
+  "DOC",
+]
+preview = true
+
+[language-server.ruff.config.settings.format]
+preview = true
+quote-style = "double"
+docstring-code-format = true
+indent-style = "space"
 skip-magic-trailing-comma = true

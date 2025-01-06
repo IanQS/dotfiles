@@ -7,3 +7,5 @@ source ~/.intellimacs/which-key.vim
 
 nmap , <leader>m
 vmap , <leader>m
+
+"source ~/helix.vim/helix.idea.vim
