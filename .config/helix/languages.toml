@@ -20,9 +20,9 @@ roots = ["pyproject.toml", "setup.py", "poetry.lock", ".git", ".jj", ".venv/"]
 # https://docs.basedpyright.com/latest/configuration/language-server-settings/
 ########################################
 [language-server.basedpyright]
-command = "basedpyright-ls-helix"
-#command = "basedpyright-langserver"
-# args - ["--stdio"]
+#command = "basedpyright-ls-helix"
+command = "basedpyright-langserver"
+args = ["--stdio"]
 config.reportMissingtypeStubs = false
 except-features = ["format", "code-action"]
 

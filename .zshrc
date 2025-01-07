@@ -13,12 +13,12 @@ fi
 
 case "$(uname -sr)" in
   Darwin*)
-    echo 'Zshrc Mac OS X'
+    echo 'Mac OS X .zshrc'
     source ~/antigen.zsh
     ;;
 
   Linux*)
-    echo 'Zshrc Linux'
+    echo 'Linux .zshrc'
     source ~/antigen.zsh || source /usr/share/zsh/share/antigen.zsh
     ;;
 

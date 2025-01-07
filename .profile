@@ -3,7 +3,7 @@
 case "$(uname -sr)" in
   
   Darwin*)
-    echo 'Mac OS X'
+    echo 'Mac OS X .profile'
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -13,11 +13,11 @@ case "$(uname -sr)" in
     ;;
 
   Linux*)
-    echo 'Linux'
+    echo 'Linux .profile'
     export TERMINAL=terminator
     export EDITOR=/usr/bin/vim
     export BROWSER=/usr/bin/firefox
-    source /usr/share/nvm/init-nvm.sh >> ~/.zshrc
+    # source /usr/share/nvm/init-nvm.sh >> ~/.zshrc
     ;;
 
   # Add here more strings to compare
