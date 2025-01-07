@@ -1,3 +1,6 @@
+########################################
+# LANGUAGE: PYTHON
+######################################### 
 [[language]]
 name = "python"
 language-id = "python"
@@ -81,3 +84,50 @@ quote-style = "double"
 docstring-code-format = true
 indent-style = "space"
 skip-magic-trailing-comma = true
+
+
+#########################################
+# LANGUAGE: Markdown
+#########################################
+
+[[language]]
+auto-format = true
+language-servers = ["marksman", "mpls"]
+name = "markdown"
+
+[language-server.mpls]
+command = "mpls"
+args = ["--dark-mode","--enable-emoji", "--enable-wikilinks", "--full-sync", "--browser", "Firefox"]
+
+#########################################
+# LANGUAGE: LaTeX
+######################################### 
+[[language]]
+name = "latex"
+language-servers = ["texlab", "ltex"] # ltex provides some autocompletion/grammar suggestions
+indent = { tab-width = 4, unit = "\t" }
+
+[language-server.texlab]
+command = "texlab"
+
+[language-server.texlab.config]
+auxDirectory = "output"
+
+[language-server.texlab.config.chktex]
+onOpenAndSave = true
+onEdit = true
+
+[language-server.texlab.config.build]
+forwardSearchAfter = false
+onSave = false
+executable = "lualatex"
+args = [
+	"-X",
+	"compile",
+	"%f",
+	"--synctex",
+	"--keep-logs",
+	"--keep-intermediates",
+	"--outdir=output",
+	"-Zshell-escape",
+]
