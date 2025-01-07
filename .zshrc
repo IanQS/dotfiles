@@ -12,7 +12,6 @@ fi
 #   - qpdf book.pdf --pages .  2-1313 -- --replace-input
 
 case "$(uname -sr)" in
-  
   Darwin*)
     echo 'Zshrc Mac OS X'
     source ~/antigen.zsh
@@ -20,7 +19,7 @@ case "$(uname -sr)" in
 
   Linux*)
     echo 'Zshrc Linux'
-    source /usr/share/zsh/share/antigen.zsh
+    source ~/antigen.zsh || source /usr/share/zsh/share/antigen.zsh
     ;;
 
   # Add here more strings to compare
@@ -30,7 +29,6 @@ case "$(uname -sr)" in
     echo 'Other OS' 
     ;;
 esac
-
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -54,18 +52,20 @@ antigen theme romkatv/powerlevel10k
 # Tell antigen that you're done.
 antigen apply
 
-export EDITOR="nvim"
+export EDITOR="hx"
 export TERM=xterm-256color
 
 
 alias sl='exa'
 alias ls='exa'
-alias vim='nvim'
+alias la='exa -lah'
+alias vim='hx'
 alias top='bottom'
 alias cat='bat'
 alias dumpCondaEnv='conda env export --no-builds > environment.yml'
 alias cleanDeadSymlinks='for f in `find -L $DIR -maxdepth 1 -type l`; do unlink $f; done'
 alias ggraph='git-graph'
+alias gpuWatcher='gpustat -cp --watch'
 alias screenAbove="xrandr --output HDMI1 --mode 1920x1080 --above eDP1"
 alias screenReset="xrandr -s 0"
 alias build="mkdir build; cd build; cmake ..; make -j 4; cd ../"
@@ -86,8 +86,10 @@ setopt HIST_IGNORE_DUPS
 #add timestamp for each entry
 setopt EXTENDED_HISTORY
 
-export PATH=$PATH:/home/iq/.local/bin
+export PATH=$PATH:/home/$USER/.local/bin
 export RUSTC_WRAPPER=sccache
+
+source ~/.profile
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -95,7 +97,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 source <(fzf --zsh)
-export FZF_COMPLETION_TRIGGER='~~'
+#export FZF_COMPLETION_TRIGGER='~~'
 
 eval "$(zoxide init zsh)"
 . "$HOME/.cargo/env"
@@ -105,7 +107,7 @@ case "$(uname -sr)" in
   Darwin*)
     echo 'Mac OS X'
     export PATH=/opt/homebrew/anaconda3/bin:$PATH
-    export PATH="$PATH:/Users/ianquah/Library/Application Support/JetBrains/Toolbox/scripts"
+    export PATH="$PATH:/Users/$USER/Library/Application Support/JetBrains/Toolbox/scripts"
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
     # >>> conda initialize >>>
@@ -132,12 +134,12 @@ case "$(uname -sr)" in
 
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/home/iq/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    __conda_setup="$('/home/$USER/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
         eval "$__conda_setup"
     else
-        if [ -f "/home/iq/anaconda3/etc/profile.d/conda.sh" ]; then
-            . "/home/iq/anaconda3/etc/profile.d/conda.sh"
+        if [ -f "/home/$USER/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/$USER/anaconda3/etc/profile.d/conda.sh"
         else
             export PATH="/home/iq/anaconda3/bin:$PATH"
         fi

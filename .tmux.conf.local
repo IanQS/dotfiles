@@ -25,7 +25,7 @@ tmux_conf_new_window_retain_current_path=false
 # new pane retains current path, possible values are:
 #   - true (default)
 #   - false
-tmux_conf_new_pane_retain_current_path=true
+tmux_conf_new_pane_retain_current_path=false
 
 # new pane tries to reconnect ssh sessions (experimental), possible values are:
 #   - true
@@ -361,8 +361,8 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
-set -g @named-snapshot-restore 'C-\:dev C-o:main'
-set -g @named-snapshot-save 'C-]:dev C-p:main'
+set -g @named-snapshot-restore 'C-n:manual C-]:dev C-o:main'
+set -g @named-snapshot-save 'C-m:manual C-\:dev C-p:main'
 
 # -- tpm -----------------------------------------------------------------------
 

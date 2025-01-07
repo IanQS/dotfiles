@@ -121,7 +121,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec wezterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -230,8 +230,8 @@ bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 set $ws1 "1:General"
 set $ws2 "2:Work1"
 set $ws3 "3:Work2"
-set $ws4 "4:Work3"
-set $ws5 "5:Personal"
+set $ws4 "4:Obsidian"
+set $ws5 "5:WorkObsidian"
 set $ws6 "6:Misc1"
 set $ws7 "7:Misc2"
 set $ws8 "8:Misc3"

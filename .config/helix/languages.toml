@@ -6,6 +6,10 @@ name = "python"
 language-id = "python"
 auto-format = true
 language-servers = ["basedpyright", "ruff"]
+#language-servers = [
+#   { name = "ruff-lsp", only-features = [ "format", "diagnostics" ] },
+#   { name = "basedpyright", except-features = [ "format", "diagnostics" ] },
+# ]
 formatter = { command = "ruff", args = ["format", "-"] }
 file-types = ["py", "ipynb"]
 comment-token = "#"
@@ -18,16 +22,17 @@ roots = ["pyproject.toml", "setup.py", "poetry.lock", ".git", ".jj", ".venv/"]
 [language-server.basedpyright]
 command = "basedpyright-ls-helix"
 #command = "basedpyright-langserver"
+# args - ["--stdio"]
 config.reportMissingtypeStubs = false
 except-features = ["format", "code-action"]
 
 # [language-server.basedpyright.config.basedpyright.analysis]
-# autoSearchPaths = true
-# diagnosticMode = "workspace"  # "openFilesOnly"
-# useLibraryCodeForTypes = true
-# autoImportCompletions = true
-# typeCheckingMode = "standard" #"recommended"
-# disableTaggedHints = true
+autoSearchPaths = true
+diagnosticMode = "workspace"  # "openFilesOnly"
+useLibraryCodeForTypes = true
+autoImportCompletions = true
+typeCheckingMode = "standard" #"recommended"
+disableTaggedHints = true
 
 
 # ########################################
