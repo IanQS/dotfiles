@@ -415,10 +415,6 @@ bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
-
-set -g @named-snapshot-restore 'C-n:manual C-o:main'
-set -g @named-snapshot-save 'C-m:manual C-p:main'
-
 # if you don't want Oh my tmux! to alter a binding or a setting, use #!important
 # bind c new-window -c '#{pane_current_path}' #!important
 
@@ -467,6 +463,10 @@ set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'spywhere/tmux-named-snapshot'
 # set -g @continuum-restore 'on'
+
+set -g @named-snapshot-restore 'C-n:manual C-o:main'
+set -g @named-snapshot-save 'C-m:manual C-p:main'
+
 # -- custom variables ----------------------------------------------------------
 
 # to define a custom #{foo} variable, define a POSIX shell function between the
