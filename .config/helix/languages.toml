@@ -6,10 +6,6 @@ name = "python"
 language-id = "python"
 auto-format = true
 language-servers = ["basedpyright", "ruff"]
-#language-servers = [
-#   { name = "ruff-lsp", only-features = [ "format", "diagnostics" ] },
-#   { name = "basedpyright", except-features = [ "format", "diagnostics" ] },
-# ]
 formatter = { command = "ruff", args = ["format", "-"] }
 file-types = ["py", "ipynb"]
 comment-token = "#"
@@ -20,7 +16,6 @@ roots = ["pyproject.toml", "setup.py", "poetry.lock", ".git", ".jj", ".venv/"]
 # https://docs.basedpyright.com/latest/configuration/language-server-settings/
 ########################################
 [language-server.basedpyright]
-#command = "basedpyright-ls-helix"
 command = "basedpyright-langserver"
 args = ["--stdio"]
 config.reportMissingtypeStubs = false
@@ -136,3 +131,5 @@ args = [
 	"--outdir=output",
 	"-Zshell-escape",
 ]
+
+
