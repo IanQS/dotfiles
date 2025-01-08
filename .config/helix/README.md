@@ -1,8 +1,8 @@
-# Setting Up
+# MacOS
 
+Well, MacOS is fucking stupid and somehow mangles the paths. Anyways, use this fix:
 
-After you've set everything up as per the top-level description, run
+![[macos_tmux_conda_fix.png]]
 
-`sudo ln -s $HOME/.config/helix/basedpyright-ls-helix.sh /usr/local/bin/basedpyright-ls-helix`
+which will then fix everything. How dumb
 
-which will put the `basedpyright-ls-helix` in the appropriate location
