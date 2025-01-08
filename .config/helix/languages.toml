@@ -24,9 +24,9 @@ roots = ["pyproject.toml", "setup.py", "poetry.lock", ".git", ".jj", ".venv/"]
 command = "basedpyright-langserver"
 args = ["--stdio"]
 config.reportMissingtypeStubs = false
-except-features = ["format", "code-action"]
+except-features = ["format"]
 
-# [language-server.basedpyright.config.basedpyright.analysis]
+[language-server.basedpyright.config.basedpyright.analysis]
 autoSearchPaths = true
 diagnosticMode = "workspace"  # "openFilesOnly"
 useLibraryCodeForTypes = true
@@ -39,100 +39,100 @@ disableTaggedHints = true
 # # https://docs.astral.sh/ruff/settings
 # ########################################
 
-# [language-server.ruff]
-# command = "ruff"
-# args = ["server", "--preview"]
-# preview = true
-# show-fixes = true
-# include = ["*.py"]
-# fix = true                     # TODO 
+[language-server.ruff]
+command = "ruff"
+args = ["server", "--preview"]
+preview = true
+show-fixes = true
+include = ["*.py"]
+fix = true                     # TODO 
 
-# [language-server.ruff.config.settings]
-# lineLength = 80
-# logLevel = "debug"
+[language-server.ruff.config.settings]
+lineLength = 80
+logLevel = "debug"
 
-# [language-server.ruff.analyze]
-# detect-string-imports = true
+[language-server.ruff.analyze]
+detect-string-imports = true
 
-# [language-server.ruff.lint.pydocstyle]
-# convention = "google"
+[language-server.ruff.lint.pydocstyle]
+convention = "google"
 
-# [language-server.ruff.config.settings.lint]
-# select = [
-#   "E",
-#   "F",
-#   "W",
-#   "B",
-#   "I",
-#   "RUF",
-#   "N",
-#   "SIM",
-#   "LOG",
-#   "ERA",
-#   "W",
-#   "D",
-#   "UP",
-#   "ANN",
-#   "ASYNC",
-#   "S",
-#   "RET",
-#   "TCH",
-#   "ARG",
-#   "PTH",
-#   "DOC",
-# ]
-# preview = true
+[language-server.ruff.config.settings.lint]
+select = [
+  "E",
+  "F",
+  "W",
+  "B",
+  "I",
+  "RUF",
+  "N",
+  "SIM",
+  "LOG",
+  "ERA",
+  "W",
+  "D",
+  "UP",
+  "ANN",
+  "ASYNC",
+  "S",
+  "RET",
+  "TCH",
+  "ARG",
+  "PTH",
+  "DOC",
+]
+preview = true
 
-# [language-server.ruff.config.settings.format]
-# preview = true
-# quote-style = "double"
-# docstring-code-format = true
-# indent-style = "space"
-# skip-magic-trailing-comma = true
+[language-server.ruff.config.settings.format]
+preview = true
+quote-style = "double"
+docstring-code-format = true
+indent-style = "space"
+skip-magic-trailing-comma = true
 
 
-# #########################################
-# # LANGUAGE: Markdown
-# #########################################
+#########################################
+# LANGUAGE: Markdown
+#########################################
 
-# [[language]]
-# auto-format = true
-# language-servers = ["marksman", "mpls"]
-# name = "markdown"
+[[language]]
+auto-format = true
+language-servers = ["marksman", "mpls"]
+name = "markdown"
 
-# [language-server.mpls]
-# command = "mpls"
-# args = ["--dark-mode","--enable-emoji", "--enable-wikilinks", "--full-sync", "--browser", "Firefox"]
+[language-server.mpls]
+command = "mpls"
+args = ["--dark-mode","--enable-emoji", "--enable-wikilinks", "--full-sync", "--browser", "Firefox"]
 
-# #########################################
-# # LANGUAGE: LaTeX
-# ######################################### 
-# [[language]]
-# name = "latex"
-# language-servers = ["texlab", "ltex"] # ltex provides some autocompletion/grammar suggestions
-# indent = { tab-width = 4, unit = "\t" }
+#########################################
+# LANGUAGE: LaTeX
+######################################### 
+[[language]]
+name = "latex"
+language-servers = ["texlab", "ltex"] # ltex provides some autocompletion/grammar suggestions
+indent = { tab-width = 4, unit = "\t" }
 
-# [language-server.texlab]
-# command = "texlab"
+[language-server.texlab]
+command = "texlab"
 
-# [language-server.texlab.config]
-# auxDirectory = "output"
+[language-server.texlab.config]
+auxDirectory = "output"
 
-# [language-server.texlab.config.chktex]
-# onOpenAndSave = true
-# onEdit = true
+[language-server.texlab.config.chktex]
+onOpenAndSave = true
+onEdit = true
 
-# [language-server.texlab.config.build]
-# forwardSearchAfter = false
-# onSave = false
-# executable = "lualatex"
-# args = [
-# 	"-X",
-# 	"compile",
-# 	"%f",
-# 	"--synctex",
-# 	"--keep-logs",
-# 	"--keep-intermediates",
-# 	"--outdir=output",
-# 	"-Zshell-escape",
-# ]
+[language-server.texlab.config.build]
+forwardSearchAfter = false
+onSave = false
+executable = "lualatex"
+args = [
+	"-X",
+	"compile",
+	"%f",
+	"--synctex",
+	"--keep-logs",
+	"--keep-intermediates",
+	"--outdir=output",
+	"-Zshell-escape",
+]
