@@ -16,6 +16,10 @@
 	line-numbers = true
     side-by-side = true
 
-#[merge]
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f#[merge]
 #    conflictstyle = zdiff3
 

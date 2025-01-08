@@ -56,9 +56,9 @@ export EDITOR="hx"
 export TERM=xterm-256color
 
 
-alias sl='exa'
-alias ls='exa'
-alias la='exa -lah'
+alias sl='eza'
+alias ls='eza'
+alias la='eza -lah'
 alias vim='hx'
 alias top='bottom'
 alias cat='bat'
@@ -184,6 +184,3 @@ esac
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
-

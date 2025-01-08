@@ -2,12 +2,21 @@ theme = "monokai_pro"
 
 [editor]
 line-number = "relative"
-mouse = false
+mouse = true
 cursorline = true
 true-color = true
 rulers = [80]
 color-modes = true
+completion-timeout = 15
 
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+#center = ["file-name"]
+right = ["diagnostics", "workspace-diagnostics", "version-control", "selections", "position", "file-encoding", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -33,3 +42,4 @@ render = true
 auto-signature-help = true
 # Show LSP messages in the status line
 display-messages = true
+display-inlay-hints = true
