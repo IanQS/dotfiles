@@ -1,3 +1,9 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = git@github.com:IanQS/kickstart.nvim.git
+[submodule ".config/helix/friendly-snippets"]
+	path = .config/helix/friendly-snippets
+	url = https://github.com/rafamadriz/friendly-snippets
+[submodule "friendly-snippets"]
+	path = friendly-snippets
+	url = https://github.com/rafamadriz/friendly-snippets

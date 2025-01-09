@@ -6,3 +6,12 @@ Well, MacOS is fucking stupid and somehow mangles the paths. Anyways, use this f
 
 which will then fix everything. How dumb
 
+# Libraries to install
+
+- prettier
+- basedpyright
+- ruff
+- mpls
+- marksman
+- texlab
+- ltex
