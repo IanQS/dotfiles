@@ -88,7 +88,6 @@ setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
 
 export PATH=$PATH:/home/$USER/.local/bin
-export RUSTC_WRAPPER=sccache
 
 source ~/.profile
 
