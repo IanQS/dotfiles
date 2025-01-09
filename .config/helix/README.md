@@ -16,3 +16,4 @@ which will then fix everything. How dumb
 - texlab
 - ltex
 
+- [simple-completion-language-server](https://github.com/estin/simple-completion-language-server)
