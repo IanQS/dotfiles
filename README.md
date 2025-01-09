@@ -2,6 +2,10 @@
 
 For some reason, `stow` isn't working with me.... So, do the following:
 
+
+
+
+
 ```
 # Break the symlinks
 rm -rf dotfiles

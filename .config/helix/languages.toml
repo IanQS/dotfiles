@@ -92,7 +92,7 @@ skip-magic-trailing-comma = true
 
 [[language]]
 auto-format = true
-language-servers = ["marksman", "mpls"]
+language-servers = ["marksman", "mpls", "scls"]
 name = "markdown"
 formatter = { command = "prettier", args = ["--parser", "markdown"] }
 
@@ -106,7 +106,7 @@ args = ["--dark-mode","--enable-emoji", "--enable-wikilinks", "--full-sync", "--
 ######################################### 
 [[language]]
 name = "latex"
-language-servers = ["texlab", "ltex"] # ltex provides some autocompletion/grammar suggestions
+language-servers = ["texlab", "ltex", "scls"] # ltex provides some autocompletion/grammar suggestions
 indent = { tab-width = 4, unit = "\t" }
 
 [language-server.texlab]
