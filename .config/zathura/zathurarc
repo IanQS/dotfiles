@@ -1,60 +1,39 @@
-# Zathura configuration file
-# See man `man zathurarc'
+# General things
+#set recolor true # Dark mode integration for lighthouse
+set selection-clipboard clipboard # Set clipboard copy
 
-# Open document in fit-width mode by default
-set adjust-open "best-fit"
+# Font size
+set font 'monospace normal 16'
 
 # One page per row by default
 set pages-per-row 1
 
-#stop at page boundries
-set scroll-page-aware "true"
-set smooth-scroll "true"
-set scroll-full-overlap 0.01
-set scroll-step 100
-
-#zoom settings
-set zoom-min 10
-set guioptions ""
-
-# zathurarc-dark
-
-set font "inconsolata 15"
-set default-bg "#000000" #00
-set default-fg "#F7F7F6" #01
-
-set statusbar-fg "#B0B0B0" #04
-set statusbar-bg "#202020" #01
-
-set inputbar-bg "#151515" #00 currently not used
-set inputbar-fg "#FFFFFF" #02
-
-set notification-error-bg "#AC4142" #08
-set notification-error-fg "#151515" #00
-
-set notification-warning-bg "#AC4142" #08
-set notification-warning-fg "#151515" #00
-set highlight-color"rgba(136,192,208,0.5)"
-set highlight-active-color"rgba(236,239,244,0.5)"
-
-set completion-highlight-fg "#151515" #02
-set completion-highlight-bg "#90A959" #0C
-
-set completion-bg "#303030" #02
-set completion-fg "#E0E0E0" #0C
-
-set notification-bg "#90A959" #0B
-set notification-fg "#151515" #00
-
-set recolor "true"
-set recolor-lightcolor "#000000" #00
-set recolor-darkcolor "#E0E0E0" #06
-set recolor-reverse-video "true"
-set recolor-keephue "true"
-
-
-set render-loading "false"
-set scroll-step 50
+# Keybindings
+map J zoom out
+map K zoom in
 unmap f
 map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
+map r reload
+
+map b toggle_page_mode # Toggle dual page mode
+
+unmap u # unmaps u and d for default full-up/down scroll
+unmap d
+map u scroll full-up
+map d scroll full-down
+
+# stop at page boundries
+set scroll-page-aware "true"
+set scroll-full-overlap 0.01
+set scroll-step 100
+
+set highlight-color "rgba(136,192,208,0.5)"
+set highlight-active-color "rgba(236,239,244,0.5)"
+
+# zoom settings
+set zoom-min 5
+set guioptions ""
+
+set statusbar-bg                "#073642" # base02
+set statusbar-fg                "#93a1a1" # base1
