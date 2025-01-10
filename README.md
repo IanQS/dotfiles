@@ -2,13 +2,9 @@
 
 For some reason, `stow` isn't working with me.... So, do the following:
 
-
-
-
-
 ```
 # Break the symlinks
-rm -rf dotfiles
+cd ~; rm -rf dotfiles; DIR="."
 
 # Clean up all the broken symlinks
 for f in `find -L $DIR -maxdepth 1 -type l`; do unlink $f; done
@@ -49,6 +45,6 @@ yazi-cli
 yazi-fm
 git-delta
 
-## LSP Stuff 
+## LSP Stuff
 
 See helix [README.md](.config/helix/README.md)
