@@ -2,7 +2,7 @@
 
 Well, MacOS is fucking stupid and somehow mangles the paths. Anyways, use this fix:
 
-![[macos_tmux_conda_fix.png]]
+![macos_tmux_conda_fix.png]
 
 which will then fix everything. How dumb
 
@@ -17,3 +17,7 @@ which will then fix everything. How dumb
 - ltex
 
 - [simple-completion-language-server](https://github.com/estin/simple-completion-language-server)
+
+# Installing the snippets
+
+`simple-completion-language-server fetch-external-snippets`
