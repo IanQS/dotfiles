@@ -1,3 +1,14 @@
+# Added by Toolbox App
+export PATH="$PATH:/Users/ianquah/Library/Application Support/JetBrains/Toolbox/scripts"
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+
+if [ -x /usr/libexec/path_helper ]; then
+	PATH=""
+	eval `/usr/libexec/path_helper -s`
+fi
+
 . "$HOME/.cargo/env"
 
 case "$(uname -sr)" in
@@ -27,4 +38,3 @@ case "$(uname -sr)" in
     echo 'Other OS' 
     ;;
 esac
-

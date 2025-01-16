@@ -88,9 +88,6 @@ setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
 
 export PATH=$PATH:/home/$USER/.local/bin
-
-source ~/.profile
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -102,18 +99,18 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source <(fzf --zsh)
-export FZF_COMPLETION_TRIGGER='~~'
-export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
-_fzf_compgen_path() {
-  fd --hidden --exclude .git . "$1"
-}
+# export FZF_COMPLETION_TRIGGER='~~'
+# export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+# _fzf_compgen_path() {
+#   fd --hidden --exclude .git . "$1"
+# }
 
-# Use fd to generate the list for directory completion
-_fzf_compgen_dir() {
-  fd --type=d --hidden --exclude .git . "$1"
-}
+# # Use fd to generate the list for directory completion
+# _fzf_compgen_dir() {
+#   fd --type=d --hidden --exclude .git . "$1"
+# }
 
 # source ~/fzf-git.sh/fzf-git.sh
 
@@ -128,7 +125,6 @@ eval "$(zoxide init zsh)"
 case "$(uname -sr)" in
   
   Darwin*)
-    echo 'Mac OS X'
     export PATH=/opt/homebrew/anaconda3/bin:$PATH
     export PATH="$PATH:/Users/$USER/Library/Application Support/JetBrains/Toolbox/scripts"
     eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -153,7 +149,6 @@ case "$(uname -sr)" in
     ;;
 
   Linux*)
-    echo 'Linux'
 
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
