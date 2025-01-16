@@ -36,8 +36,6 @@ case "$(uname -sr)" in
         export PATH="$PATH:/Users/$USER/Library/Application Support/JetBrains/Toolbox/scripts"
         ;;
     Linux*)
-        export TERMINAL=terminator
-        export BROWSER=/usr/bin/firefox
         ;;
 esac
 
@@ -48,4 +46,5 @@ if [[ "$(uname -sr)" == Darwin* ]]; then
     fi
 elif [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
     . "$HOME/anaconda3/etc/profile.d/conda.sh"
+    conda activate base
 fi
