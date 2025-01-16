@@ -43,6 +43,7 @@ esac
 if [[ "$(uname -sr)" == Darwin* ]]; then
     if [ -f "/opt/homebrew/anaconda3/etc/profile.d/conda.sh" ]; then
         . "/opt/homebrew/anaconda3/etc/profile.d/conda.sh"
+    conda activate base
     fi
 elif [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
     . "$HOME/anaconda3/etc/profile.d/conda.sh"
