@@ -49,4 +49,4 @@ display-messages = true
 display-inlay-hints = true
 
 [keys.normal]
-C-p = ":run-shell-command"
+C-p = "@:sh "
