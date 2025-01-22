@@ -23,12 +23,8 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
-[keys.insert]
-"C-[" = "normal_mode"
-
 [editor.indent-guides]
 render = true
-
 
 [editor.soft-wrap]
 enable = true
@@ -39,7 +35,6 @@ enable = true
 '[' = ']'
 '"' = '"'
 '`' = '`'
-'<' = '>'
 
 [editor.lsp]
 # Disable automatically popups of signature parameter help
@@ -48,5 +43,18 @@ auto-signature-help = true
 display-messages = true
 display-inlay-hints = true
 
+[editor.smart-tab]
+supersede-menu = true
+
+[editor.inline-diagnostics]
+cursor-line = "error"
+other-lines = "error"
+
+
+[keys.insert]
+"C-[" = "normal_mode"
+
 [keys.normal]
 C-p = "@:sh "
+- = "@zt k"
+
