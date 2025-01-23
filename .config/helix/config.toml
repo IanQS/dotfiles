@@ -8,11 +8,12 @@ true-color = true
 rulers = [80]
 color-modes = true
 completion-timeout = 15
+bufferline = "multiple"
 #end-of-line-diagnostics="warning"
+
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name"]
-#center = ["file-name"]
 #right = ["diagnostics", "workspace-diagnostics", "version-control", "selections", "position", "file-encoding", "file-type"]
 right = ["diagnostics", "separator", "workspace-diagnostics", "selections", "position"]
 separator = "│"
@@ -50,7 +51,9 @@ supersede-menu = true
 
 #[editor.inline-diagnostics]
 #cursor-line = "error"
-
+#
+#####################################
+# Keys
 [keys.insert]
 "C-[" = "normal_mode"
 
@@ -58,3 +61,5 @@ supersede-menu = true
 C-p = "@:sh "
 - = "@zt k"
 
+[keys.select]
+"g" = { "e" = "goto_file_end" }
