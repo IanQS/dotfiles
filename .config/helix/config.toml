@@ -8,11 +8,13 @@ true-color = true
 rulers = [80]
 color-modes = true
 completion-timeout = 15
+#end-of-line-diagnostics="warning"
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name"]
 #center = ["file-name"]
-right = ["diagnostics", "workspace-diagnostics", "version-control", "selections", "position", "file-encoding", "file-type"]
+#right = ["diagnostics", "workspace-diagnostics", "version-control", "selections", "position", "file-encoding", "file-type"]
+right = ["diagnostics", "separator", "workspace-diagnostics", "selections", "position"]
 separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
@@ -46,10 +48,8 @@ display-inlay-hints = true
 [editor.smart-tab]
 supersede-menu = true
 
-[editor.inline-diagnostics]
-cursor-line = "error"
-other-lines = "error"
-
+#[editor.inline-diagnostics]
+#cursor-line = "error"
 
 [keys.insert]
 "C-[" = "normal_mode"
