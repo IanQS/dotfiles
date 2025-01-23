@@ -58,9 +58,13 @@ supersede-menu = true
 "C-[" = "normal_mode"
 
 [keys.normal]
-# C-p = "@:sh "
 - = "@zt k"
-C-p = "@:lsp-workspace-command "
+"C-p" = "@:lsp-workspace-command "
+"C-P" = "@:sh "
+
+[keys.normal."space".b]
+f = "buffer_picker"
+q = ":buffer-close"
 
 [keys.select]
 "g" = { "e" = "goto_file_end" }
