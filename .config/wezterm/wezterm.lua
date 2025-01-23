@@ -52,6 +52,7 @@ return {
 	font_size = 14.0,
 	keys = {
 		{ key = "v", mods = "CTRL", action = act.PasteFrom("Clipboard") },
+		{key="P", mods="CTRL", action=wezterm.action.DisableDefaultAssignment},
 		{
 			key = "C",
 			mods = "CTRL",
