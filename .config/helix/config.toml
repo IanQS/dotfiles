@@ -61,6 +61,9 @@ supersede-menu = true
 - = "@zt k"
 "C-p" = "@:lsp-workspace-command "
 "C-P" = "@:sh "
+"ret" = "goto_word"
+C-j     = "page_down"
+C-k     = ["page_up", "goto_window_top"]
 
 [keys.normal."space".b]
 f = "buffer_picker"
