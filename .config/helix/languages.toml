@@ -21,13 +21,15 @@ command = "basedpyright-langserver"
 args = ["--stdio"]
 config.reportMissingtypeStubs = true
 except-features = ["format"]
+reportUnusedImport = false
 
 [language-server.basedpyright.config.basedpyright.analysis]
 autoSearchPaths = true
 diagnosticMode = "workspace"  # "openFilesOnly"
 useLibraryCodeForTypes = true
 autoImportCompletions = true
-typeCheckingMode = "standard" #"recommended"
+# typeCheckingMode = "standard"
+typeCheckingMode = "recommended"
 disableTaggedHints = false
 
 
