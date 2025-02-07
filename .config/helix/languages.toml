@@ -6,7 +6,7 @@ name = "python"
 language-id = "python"
 auto-format = true
 language-servers = ["basedpyright", "ruff", "scls"]
-formatter = { command = "ruff", args = ["format", "-"] }
+formatter = { command = "bash", args = ["-c", "ruff check --fix - | ruff format -"] }
 file-types = ["py", "ipynb"]
 comment-token = "#"
 shebangs = ["python"]
@@ -27,7 +27,7 @@ diagnosticMode = "workspace"  # "openFilesOnly"
 useLibraryCodeForTypes = true
 autoImportCompletions = true
 typeCheckingMode = "standard" #"recommended"
-disableTaggedHints = true
+disableTaggedHints = false
 
 
 # ########################################
@@ -37,10 +37,11 @@ disableTaggedHints = true
 [language-server.ruff]
 command = "ruff"
 args = ["server", "--preview"]
+environment = { "RUFF_TRACE" = "messages" }
 preview = true
 show-fixes = true
 include = ["*.py"]
-fix = true                     # TODO 
+fix = true
 
 [language-server.ruff.config.settings]
 lineLength = 80
@@ -93,7 +94,7 @@ skip-magic-trailing-comma = true
 [[language]]
 auto-format = true
 # language-servers = ["marksman", "mpls", "scls", "markdown-oxi"]
-language-servers = ["scls", "markdown-oxide"]
+language-servers = ["scls", "markdown-oxide", "marksman"]
 name = "markdown"
 formatter = { command = "prettier", args = ["--parser", "markdown"] }
 
