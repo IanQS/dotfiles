@@ -9,7 +9,14 @@ rulers = [80]
 color-modes = true
 completion-timeout = 15
 bufferline = "multiple"
-#end-of-line-diagnostics="warning"
+jump-label-alphabet = "jfkdls;aurieowpqnvmcxz"
+# end-of-line-diagnostics="hint"
+
+
+# [editor.inline-diagnostics]
+# cursor-line = "error"
+# other-lines = "warning"
+# max-diagnostics = 2
 
 
 [editor.statusline]
@@ -48,10 +55,6 @@ display-inlay-hints = true
 
 [editor.smart-tab]
 supersede-menu = true
-
-#[editor.inline-diagnostics]
-#cursor-line = "error"
-#
 #####################################
 # Keys
 [keys.insert]
@@ -61,6 +64,7 @@ supersede-menu = true
 - = "@zt k"
 "C-p" = "@:lsp-workspace-command "
 "C-P" = "@:sh "
+"C-r" = "@:rl"
 "ret" = "goto_word"
 C-j     = "page_down"
 C-k     = ["page_up", "goto_window_top"]
@@ -68,6 +72,8 @@ C-k     = ["page_up", "goto_window_top"]
 [keys.normal."space".b]
 f = "buffer_picker"
 q = ":buffer-close"
+p = ":buffer-previous"
+n = ":buffer-next"
 
 [keys.select]
 "g" = { "e" = "goto_file_end" }
