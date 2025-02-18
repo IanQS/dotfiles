@@ -6,8 +6,8 @@ name = "python"
 language-id = "python"
 auto-format = true
 language-servers = ["basedpyright", "ruff", "scls"]
-formatter = { command = "bash", args = ["-c", "ruff check --fix - | ruff format -"] }
-# formatter = { command = "ruff", args = ["format", "-"] }
+#formatter = { command = "bash", args = ["-c", "ruff check --fix - | ruff format -"] }
+formatter = { command = "ruff", args = ["format", "-"] }
 file-types = ["py", "ipynb"]
 comment-token = "#"
 shebangs = ["python"]
@@ -28,8 +28,8 @@ autoSearchPaths = true
 diagnosticMode = "workspace"  # "openFilesOnly"
 useLibraryCodeForTypes = true
 autoImportCompletions = true
-# typeCheckingMode = "standard"
-typeCheckingMode = "recommended"
+typeCheckingMode = "standard"
+# typeCheckingMode = "recommended"
 disableTaggedHints = false
 
 
