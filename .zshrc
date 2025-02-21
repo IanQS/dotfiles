@@ -65,10 +65,11 @@ alias build="mkdir build; cd build; cmake ..; make -j 4; cd ../"
 alias rebuild="cd build; cmake ..; make -j 6; cd ../"
 
 # Tool Initialization
-source <(fzf --zsh)
 zvm_after_init_commands+=('source <(fzf --zsh)')
 eval "$(zoxide init zsh)"
 
 # Theme Configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
