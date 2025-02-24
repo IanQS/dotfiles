@@ -6,8 +6,9 @@ name = "python"
 language-id = "python"
 auto-format = true
 language-servers = ["basedpyright", "ruff", "scls"]
-#formatter = { command = "bash", args = ["-c", "ruff check --fix - | ruff format -"] }
-formatter = { command = "ruff", args = ["format", "-"] }
+formatter = { command = "zsh", args = ["-c", """
+  ruff check --select I --fix - | ruff format -
+  """] }
 file-types = ["py", "ipynb"]
 comment-token = "#"
 shebangs = ["python"]
@@ -103,7 +104,7 @@ formatter = { command = "prettier", args = ["--parser", "markdown"] }
 
 [language-server.mpls]
 command = "mpls"
-args = ["--dark-mode","--enable-emoji", "--enable-wikilinks", "--full-sync", "--browser", "Firefox"]
+args = ["--dark-mode","--enable-emoji", "--enable-wikilinks", "--full-sync", "--browser", "Firefox", "--port", "8080"]
 
 #########################################
 # LANGUAGE: LaTeX
