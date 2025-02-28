@@ -62,12 +62,18 @@ supersede-menu = true
 
 [keys.normal]
 - = "@zt k"
-"C-p" = "@:lsp-workspace-command "
-"C-P" = "@:sh "
+# "C-p" = "@:lsp-workspace-command "
+"C-p" = "@:sh "
 "C-r" = "@:rl"
 "ret" = "goto_word"
 C-j     = "page_down"
 C-k     = ["page_up", "goto_window_top"]
+
+[keys.normal.n]
+n = ["goto_next_function", "collapse_selection"]
+N = "goto_next_function"
+p = ["goto_prev_function", "collapse_selection"]
+P = "goto_prev_function"
 
 [keys.normal."space".b]
 f = "buffer_picker"
