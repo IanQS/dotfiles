@@ -69,12 +69,6 @@ supersede-menu = true
 C-j     = "page_down"
 C-k     = ["page_up", "goto_window_top"]
 
-[keys.normal.n]
-n = ["goto_next_function", "collapse_selection"]
-N = "goto_next_function"
-p = ["goto_prev_function", "collapse_selection"]
-P = "goto_prev_function"
-
 [keys.normal."space".b]
 f = "buffer_picker"
 q = ":buffer-close"
