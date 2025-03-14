@@ -10,6 +10,8 @@ color-modes = true
 completion-timeout = 15
 bufferline = "multiple"
 jump-label-alphabet = "jfkdls;aurieowpqnvmcxz"
+default-yank-register = '+'
+
 # end-of-line-diagnostics="hint"
 
 
@@ -18,15 +20,13 @@ jump-label-alphabet = "jfkdls;aurieowpqnvmcxz"
 # other-lines = "warning"
 # max-diagnostics = 2
 
-
 [editor.statusline]
 left = ["mode", "spinner", "file-name"]
-#right = ["diagnostics", "workspace-diagnostics", "version-control", "selections", "position", "file-encoding", "file-type"]
 right = ["diagnostics", "separator", "workspace-diagnostics", "selections", "position"]
 separator = "│"
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
+mode.normal = "NOR"
+mode.insert = "INS"
+mode.select = "SEL"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -68,6 +68,17 @@ supersede-menu = true
 "ret" = "goto_word"
 C-j     = "page_down"
 C-k     = ["page_up", "goto_window_top"]
+C-y = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
+  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+]
+
+[keys.normal.backspace]
+y = ":yank-diagnostic"
+backspace = "suspend"
 
 [keys.normal."space".b]
 f = "buffer_picker"

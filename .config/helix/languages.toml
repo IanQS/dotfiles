@@ -97,7 +97,7 @@ skip-magic-trailing-comma = true
 [[language]]
 auto-format = true
 # language-servers = ["marksman", "mpls", "scls", "markdown-oxi"]
-language-servers = ["scls", "markdown-oxide", "marksman"]
+language-servers = ["scls", "markdown-oxide", "marksman", "mpls"]
 name = "markdown"
 formatter = { command = "prettier", args = ["--parser", "markdown"] }
 

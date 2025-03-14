@@ -34,6 +34,11 @@ case "$(uname -sr)" in
         export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
         export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
         export PATH="$PATH:/Users/$USER/Library/Application Support/JetBrains/Toolbox/scripts"
+
+        if [ -d "/Applications/Emacs.app/Contents/MacOS/bin" ]; then
+          export PATH="/Applications/Emacs.app/Contents/MacOS/bin:$PATH"
+          alias emacs="emacs -nw"
+        fi
         ;;
     Linux*)
         ;;
