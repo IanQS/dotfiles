@@ -109,37 +109,9 @@ args = ["--dark-mode","--enable-emoji", "--enable-wikilinks", "--full-sync", "--
 #########################################
 # LANGUAGE: LaTeX
 ######################################### 
-# [[language]]
-# name = "latex"
-# language-servers = ["texlab", "ltex", "scls"] # ltex provides some autocompletion/grammar suggestions
-
-# [language-server.texlab]
-# command = "texlab"
-
-# [language-server.texlab.config]
-# auxDirectory = "output"
-
-# [language-server.texlab.config.chktex]
-# onOpenAndSave = true
-# onEdit = true
-
-# [language-server.texlab.config.build]
-# forwardSearchAfter = false
-# onSave = false
-# executable = "lualatex"
-# args = [
-# 	"-X",
-# 	"compile",
-# 	"%f",
-# 	"--synctex",
-# 	"--keep-logs",
-# 	"--keep-intermediates",
-# 	"--outdir=output",
-# 	"-Zshell-escape",
-# ]
 [[language]]
 name = "latex"
-language-servers = [ "texlab" , "ltex-ls-plus", "scls"]
+language-servers = ["texlab", "ltex-ls-plus", "scls"] # ltex provides some autocompletion/grammar suggestions
 
 [language-server.ltex]
 command = "ltex-ls-plus"
@@ -150,26 +122,33 @@ command = "ltex-ls-plus"
 [language-server.texlab]
 command = "texlab"
 
-[language-server.texlab.config.texlab.build]
-onSave = true
-forwardSearchAfter = true
- executable = "latexmk"
- args = [
-  "-pdf",
-  "-interaction=nonstopmode",
-  "-synctex=1",
-  "-shell-escape",
-  "%f"
-  ]
-
-[language-server.texlab.config.texlab.forwardSearch]
-executable = "zathura"
-args = [ "--synctex-forward", "%l:%c:%f", "%p" ]
-
 [language-server.texlab.config.texlab.chktex]
 onOpenAndSave = true
 onEdit = true
 
+# Okay, so the following is REALLY useful, but you probably only want to activate it on a desktop bc it's expensive battery-wise
+# [language-server.texlab.config.texlab.build]
+# auxDirectory = "output"
+# onSave = false
+# forwardSearchAfter = true
+# executable = "latexmk"
+# args = [
+#   # "-pdf"
+#   "-pvc",
+#   "-outdir=build",
+#   "-auxdir=build",
+#   "-interaction=nonstopmode",
+#   # Sync
+#   "-synctex=1",
+
+#   # "-shell-escape",
+#   # Specify the compiler
+#   "-lualatex",
+# ]
+
+# [language-server.texlab.config.texlab.forwardSearch]
+# executable = "zathura"
+# args = [ "--synctex-forward", "%l:%f", "./build/%p" ]
 #########################################
 # LANGUAGE: Snippets
 ######################################### 
