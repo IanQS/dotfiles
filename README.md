@@ -28,22 +28,24 @@ Antigen
 oh-my-zsh
 helix
 gpu-stat
-git-graph
 
 ## Cargo
 
 bat
 bottom
 du-dust
-eza
+exa
 fd-find
-markdown-oxide
-procs
-ripgrep
-simple-completion-language-server
-yazi-cli
-yazi-fm
 git-delta
+git-graph
+gitui
+markdown-oxide
+mdpls
+ripgrp
+simple-completion-language-server
+tealdeer
+texlab
+zoxide
 
 ## LSP Stuff
 

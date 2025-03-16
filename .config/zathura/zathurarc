@@ -25,8 +25,8 @@ map d scroll full-down
 
 # stop at page boundries
 set scroll-page-aware "true"
-set scroll-full-overlap 0.01
-set scroll-step 100
+set scroll-full-overlap 0.1
+set scroll-step 5
 
 set highlight-color "rgba(136,192,208,0.5)"
 set highlight-active-color "rgba(236,239,244,0.5)"
