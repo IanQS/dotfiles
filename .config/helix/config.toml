@@ -48,7 +48,7 @@ enable = true
 
 [editor.lsp]
 # Disable automatically popups of signature parameter help
-auto-signature-help = true
+auto-signature-help = false
 # Show LSP messages in the status line
 display-messages = true
 display-inlay-hints = true
@@ -59,6 +59,7 @@ supersede-menu = true
 # Keys
 [keys.insert]
 "C-[" = "normal_mode"
+C-h = "signature_help"
 
 [keys.normal]
 - = "@zt k"
@@ -75,6 +76,9 @@ C-y = [
   ':open %sh{cat /tmp/unique-file}',
   ':redraw',
 ]
+
+[keys.normal.g]
+a = "code_action" # Maps `ga` to show possible code actions
 
 [keys.normal.backspace]
 y = ":yank-diagnostic"
