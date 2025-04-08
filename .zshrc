@@ -28,9 +28,9 @@ antigen bundle colored-man-pages
 # External plugins
 antigen bundle peterhurford/up.zsh
 antigen bundle "MichaelAquilina/zsh-you-should-use"
-antigen bundle esc/conda-zsh-completion
 antigen bundle jeffreytse/zsh-vi-mode
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle vincentto13/uvenv.plugin.zsh
 
 # Theme
 antigen theme romkatv/powerlevel10k
@@ -51,7 +51,6 @@ alias cat='bat'
 alias nvim='hx'
 
 # Development Aliases
-alias dumpCondaEnv='conda env export --no-builds > environment.yml'
 alias cleanDeadSymlinks='for f in `find -L $DIR -maxdepth 1 -type l`; do unlink $f; done'
 alias ggraph='git-graph'
 alias gpuWatcher='gpustat -cp --watch'

@@ -53,10 +53,17 @@
     prompt_char               # prompt symbol
   )
 
+  function prompt_uv(){
+    # p10k segment -f red -t "$(virtualenv_prompt_info)"
+    p10k segment -t "${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(virtualenv_prompt_info) $(git_prompt_info)"
+
+  }
+
   # Right prompt segments.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     command_execution_time    # previous command duration
-    anaconda
+    # anaconda
+    uv
     context                   # user@host
     time                      # current time
 
