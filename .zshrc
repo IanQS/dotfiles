@@ -67,6 +67,8 @@ alias rebuild="cd build; cmake ..; make -j 6; cd ../"
 # Tool Initialization
 zvm_after_init_commands+=('source <(fzf --zsh)')
 eval "$(zoxide init zsh)"
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
 
 # Theme Configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
