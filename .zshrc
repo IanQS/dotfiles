@@ -30,6 +30,7 @@ antigen bundle peterhurford/up.zsh
 antigen bundle "MichaelAquilina/zsh-you-should-use"
 antigen bundle jeffreytse/zsh-vi-mode
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
 antigen bundle vincentto13/uvenv.plugin.zsh
 
 # Theme

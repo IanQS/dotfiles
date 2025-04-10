@@ -69,6 +69,8 @@ C-h = "signature_help"
 "ret" = "goto_word"
 C-j     = "page_down"
 C-k     = ["page_up", "goto_window_top"]
+"]" = {f = ["goto_next_function", "flip_selections", "collapse_selection"], F=["goto_next_function", "flip_selections"]}
+"[" = {f = ["goto_prev_function", "collapse_selection"], F=["goto_prev_function", "flip_selections"]}
 
 C-y = [
   ':sh rm -f /tmp/unique-file',
