@@ -6,6 +6,7 @@ name = "python"
 language-id = "python"
 auto-format = true
 language-servers = ["basedpyright", "ruff", "scls"]
+# language-servers = ["pyrefly", "ruff", "scls"]
 formatter = { command = "zsh", args = ["-c", """
   ruff check --select I --fix - | ruff format -
   """] }
@@ -13,6 +14,21 @@ file-types = ["py", "ipynb"]
 comment-token = "#"
 shebangs = ["python"]
 roots = ["pyproject.toml", "setup.py", "poetry.lock", ".git", ".jj", ".venv/"]
+
+########################################
+# https://pyrefly.org/en/docs/configuration
+########################################
+[language-server.pyrefly]
+command = "pyrefly"
+args = ["lsp"]
+
+
+########################################
+# https://docs.basedpyright.com/latest/configuration/language-server-settings/
+########################################
+[language-server.ty]
+command = "ty"
+args = ["server"]
 
 ########################################
 # https://docs.basedpyright.com/latest/configuration/language-server-settings/
@@ -45,6 +61,7 @@ preview = true
 show-fixes = true
 include = ["*.py"]
 fix = true
+auto-format = true
 
 [language-server.ruff.config.settings]
 lineLength = 80
@@ -57,30 +74,34 @@ detect-string-imports = true
 convention = "google"
 
 [language-server.ruff.config.settings.lint]
-select = [
-  "E",
-  "F",
-  "W",
-  "B",
-  "I",
-  "RUF",
-  "N",
-  "SIM",
-  "LOG",
-  "ERA",
-  "W",
-  "D",
-  "UP",
-  "ANN",
-  "ASYNC",
-  "S",
-  "RET",
-  "TCH",
-  "ARG",
-  "PTH",
-  "DOC",
+select = ["ALL",
+  # "E",
+  # "F",
+  # "W",
+  # "B",
+  # "I",
+  # "RUF",
+  # "N",
+  # "SIM",
+  # "LOG",
+  # "ERA",
+  # "W",
+  # "D",
+  # "UP",
+  # "ANN",
+  # "ASYNC",
+  # "S",
+  # "RET",
+  # "TCH",
+  # "ARG",
+  # "PTH",
+  # "DOC",
 ]
-preview = false
+preview = true
+fixable = ["ALL"]
+ignore = [
+  "CPY001"  # Copyright lmao
+]
 
 [language-server.ruff.config.settings.format]
 preview = true
