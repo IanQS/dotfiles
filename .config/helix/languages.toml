@@ -8,7 +8,7 @@ auto-format = true
 language-servers = ["basedpyright", "ruff", "scls"]
 # language-servers = ["pyrefly", "ruff", "scls"]
 formatter = { command = "zsh", args = ["-c", """
-  ruff check --select I --fix - | ruff format -
+  ruff check --fix --unsafe-fixes -
   """] }
 file-types = ["py", "ipynb"]
 comment-token = "#"
@@ -64,7 +64,7 @@ fix = true
 auto-format = true
 
 [language-server.ruff.config.settings]
-lineLength = 80
+lineLength = 120
 logLevel = "debug"
 
 [language-server.ruff.analyze]
@@ -74,34 +74,43 @@ detect-string-imports = true
 convention = "google"
 
 [language-server.ruff.config.settings.lint]
-select = ["ALL",
-  # "E",
-  # "F",
-  # "W",
-  # "B",
-  # "I",
-  # "RUF",
-  # "N",
-  # "SIM",
-  # "LOG",
-  # "ERA",
-  # "W",
-  # "D",
-  # "UP",
-  # "ANN",
-  # "ASYNC",
-  # "S",
-  # "RET",
-  # "TCH",
-  # "ARG",
-  # "PTH",
-  # "DOC",
+select = ["ALL"]
+ignore = [
+    "C90", # mccabe
+    "CPY", # flake8-copyright
+    "FA", # flake8-future-annotations
+    "PGH", # pygrep-hooks
+    "TD", # flake8-todos
+    "YTT", # flake8-2020
+
+    # disable these rules to use the ruff formatter.
+    "COM812", # missing-trailing-comma
+    "COM819", # prohibited-trailing-comma
+    "D100",   # Missing docstring in public module
+    "D104",   # Missing docstring in public package
+    "D206",   # docstring-tab-indentation
+    "D300",   # triple-single-quotes
+    "D400",   # First line ends with period
+    "D415",   # first line should end with a period, question mark, or exclamation
+    "DOC201",   # Return not documented
+    "E111",   # indentation-with-invalid-multiple
+    "E114",   # indentation-with-invalid-multiple-comment
+    "E117",   # over-indented
+    "E501",   # line-too-long
+    # "FBT003", # Boolean positional val in function arg
+    "Q000",   # bad-quotes-inline-string
+    "Q001",   # bad-quotes-multiline-string
+    "Q002",   # bad-quotes-docstring
+    "Q003",   # avoidable-escaped-quote
+    "W191",   # tab-indentation
 ]
+task-tags = ["TODO"]
 preview = true
 fixable = ["ALL"]
-ignore = [
-  "CPY001"  # Copyright lmao
+unfixable = [
+    "D", # Dont fix docstyle from others
 ]
+
 
 [language-server.ruff.config.settings.format]
 preview = true
