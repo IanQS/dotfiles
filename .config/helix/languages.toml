@@ -1,3 +1,27 @@
+#########################################
+# LANGUAGE: common
+######################################### 
+
+[language-server.codebook]
+command = "codebook-lsp"
+args = ["serve"]
+
+# introduce new language server
+[language-server.scls]
+command = "simple-completion-language-server"
+
+[language-server.scls.config]
+max_completion_items = 100           # set max completion results len for each group: words, snippets, unicode-input
+feature_words = true                 # enable completion by word
+feature_snippets = true              # enable snippets
+snippets_first = true                # completions will return before snippets by default
+snippets_inline_by_word_tail = false # suggest snippets by WORD tail, for example text `xsq|` become `x^2|` when snippet `sq` has body `^2`
+feature_unicode_input = false        # enable "unicode input"
+feature_paths = false                # enable path completion
+feature_citations = false            # enable citation completion (only on `citation` feature enabled)
+
+
+
 ########################################
 # LANGUAGE: PYTHON
 #########################################
@@ -5,8 +29,7 @@
 name = "python"
 language-id = "python"
 auto-format = true
-language-servers = ["basedpyright", "ruff", "scls"]
-# language-servers = ["pyrefly", "ruff", "scls"]
+language-servers = ["basedpyright", "ruff", "scls", "codebook"]
 formatter = { command = "zsh", args = ["-c", """
   ruff check --fix --unsafe-fixes -
   """] }
@@ -15,20 +38,17 @@ comment-token = "#"
 shebangs = ["python"]
 roots = ["pyproject.toml", "setup.py", "poetry.lock", ".git", ".jj", ".venv/"]
 
-########################################
-# https://pyrefly.org/en/docs/configuration
-########################################
-[language-server.pyrefly]
-command = "pyrefly"
-args = ["lsp"]
-
 
 ########################################
-# https://docs.basedpyright.com/latest/configuration/language-server-settings/
+# 
 ########################################
 [language-server.ty]
 command = "ty"
 args = ["server"]
+
+# [language-server.ty.experimental.completions]
+# enable = true
+# ty.experimental.completions.enable": true
 
 ########################################
 # https://docs.basedpyright.com/latest/configuration/language-server-settings/
@@ -87,6 +107,7 @@ ignore = [
     "COM812", # missing-trailing-comma
     "COM819", # prohibited-trailing-comma
     "D100",   # Missing docstring in public module
+    "D101",   # Missing docstring in public class
     "D104",   # Missing docstring in public package
     "D206",   # docstring-tab-indentation
     "D300",   # triple-single-quotes
@@ -97,7 +118,7 @@ ignore = [
     "E114",   # indentation-with-invalid-multiple-comment
     "E117",   # over-indented
     "E501",   # line-too-long
-    # "FBT003", # Boolean positional val in function arg
+    "FBT003", # Boolean positional val in function arg
     "Q000",   # bad-quotes-inline-string
     "Q001",   # bad-quotes-multiline-string
     "Q002",   # bad-quotes-docstring
@@ -179,23 +200,6 @@ onEdit = true
 # [language-server.texlab.config.texlab.forwardSearch]
 # executable = "zathura"
 # args = [ "--synctex-forward", "%l:%f", "./build/%p" ]
-#########################################
-# LANGUAGE: Snippets
-######################################### 
-# introduce new language server
-[language-server.scls]
-command = "simple-completion-language-server"
-
-[language-server.scls.config]
-max_completion_items = 100           # set max completion results len for each group: words, snippets, unicode-input
-feature_words = true                 # enable completion by word
-feature_snippets = true              # enable snippets
-snippets_first = true                # completions will return before snippets by default
-snippets_inline_by_word_tail = false # suggest snippets by WORD tail, for example text `xsq|` become `x^2|` when snippet `sq` has body `^2`
-feature_unicode_input = false        # enable "unicode input"
-feature_paths = false                # enable path completion
-feature_citations = false            # enable citation completion (only on `citation` feature enabled)
-
 #########################################
 # LANGUAGE: Rust
 #########################################
