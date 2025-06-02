@@ -103,3 +103,5 @@ n = ":buffer-next"
 
 [keys.select]
 "g" = { "e" = "goto_file_end" }
+"]" = {f = ["goto_next_function", "flip_selections", "collapse_selection"], F=["goto_next_function", "flip_selections"]}
+"[" = {f = ["goto_prev_function", "collapse_selection"], F=["goto_prev_function", "flip_selections"]}
