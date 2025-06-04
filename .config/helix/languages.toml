@@ -30,9 +30,6 @@ name = "python"
 language-id = "python"
 auto-format = true
 language-servers = ["basedpyright", "ruff", "scls", "codebook"]
-formatter = { command = "zsh", args = ["-c", """
-  ruff check --fix --unsafe-fixes -
-  """] }
 file-types = ["py", "ipynb"]
 comment-token = "#"
 shebangs = ["python"]
@@ -108,12 +105,14 @@ ignore = [
     "COM819", # prohibited-trailing-comma
     "D100",   # Missing docstring in public module
     "D101",   # Missing docstring in public class
+    "D103",   # Missing docstring in public function
     "D104",   # Missing docstring in public package
     "D206",   # docstring-tab-indentation
     "D300",   # triple-single-quotes
     "D400",   # First line ends with period
     "D415",   # first line should end with a period, question mark, or exclamation
     "DOC201",   # Return not documented
+    "DTZ005",
     "E111",   # indentation-with-invalid-multiple
     "E114",   # indentation-with-invalid-multiple-comment
     "E117",   # over-indented
@@ -123,6 +122,7 @@ ignore = [
     "Q001",   # bad-quotes-multiline-string
     "Q002",   # bad-quotes-docstring
     "Q003",   # avoidable-escaped-quote
+    "S101",   # Asserts
     "W191",   # tab-indentation
 ]
 task-tags = ["TODO"]
