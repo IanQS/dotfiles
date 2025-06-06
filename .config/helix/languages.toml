@@ -124,6 +124,7 @@ ignore = [
     "Q003",   # avoidable-escaped-quote
     "S101",   # Asserts
     "TRY300",  # Consider moving this statement to an else block
+    "SIM108", # X if bla else Y
     "W191",   # tab-indentation
 ]
 task-tags = ["TODO"]
