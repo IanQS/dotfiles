@@ -5,4 +5,3 @@ export EDITOR="hx"
 
 # Basic PATH that's needed everywhere
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$(brew --prefix)/opt/llvm/bin:$PATH"
