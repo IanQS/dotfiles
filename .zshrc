@@ -91,3 +91,4 @@ eval "$(uvx --generate-shell-completion zsh)"
 # unset __conda_setup
 # <<< conda initialize <<<
 
+alias claude="/Users/ianquah/.claude/local/claude"

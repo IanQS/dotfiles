@@ -150,7 +150,7 @@ skip-magic-trailing-comma = true
 [[language]]
 auto-format = true
 # language-servers = ["marksman", "mpls", "scls", "markdown-oxi"]
-language-servers = ["scls", "markdown-oxide", "marksman", "mpls"]
+language-servers = ["scls", "marksman","markdown-oxide"  ]#, "mpls"]#,]
 name = "markdown"
 formatter = { command = "prettier", args = ["--parser", "markdown"] }
 
@@ -208,6 +208,7 @@ onEdit = true
 [[language]]
 name = "rust"
 auto-format = true
+language-servers = ["rust-analyzer", "scls", "codebook"]
 
 roots = [
   "Cargo.toml",
@@ -225,9 +226,16 @@ roots = [
 command = "rust-analyzer"
 
 [language-server.rust-analyzer.config]
-inlayHints.bindingModeHints.enable = false
+inlayHints.bindingModeHints.enable = true
 inlayHints.closingBraceHints.minLines = 10
 inlayHints.closureReturnTypeHints.enable = "with_block"
 inlayHints.discriminantHints.enable = "fieldless"
 inlayHints.lifetimeElisionHints.enable = "skip_trivial"
 inlayHints.typeHints.hideClosureInitialization = false
+files.watcher = "server"
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[language-server.rust-analyzer.config.cargo]
+features = "all"
