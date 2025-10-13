@@ -92,4 +92,3 @@ eval "$(uvx --generate-shell-completion zsh)"
 # <<< conda initialize <<<
 
 export PATH="$(brew --prefix)/opt/llvm/bin:$PATH" # Needs to be here, if not brew isn't detected properly
-alias claude="/Users/ianquah/.claude/local/claude"

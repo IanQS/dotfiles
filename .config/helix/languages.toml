@@ -175,14 +175,14 @@ command = "ltex-ls-plus"
 [language-server.texlab]
 command = "texlab"
 
-[language-server.texlab.config.texlab.chktex]
+[language-server.texlab.config.chktex]
 onOpenAndSave = true
 onEdit = true
 
 # Okay, so the following is REALLY useful, but you probably only want to activate it on a desktop bc it's expensive battery-wise
 # [language-server.texlab.config.texlab.build]
 # auxDirectory = "output"
-# onSave = false
+# onSave = true
 # forwardSearchAfter = true
 # executable = "latexmk"
 # args = [
