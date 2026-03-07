@@ -64,6 +64,7 @@ alias screenReset="xrandr -s 0"
 # Build System
 alias build="mkdir build; cd build; cmake ..; make -j 4; cd ../"
 alias rebuild="cd build; cmake ..; make -j 6; cd ../"
+alias claude-mem='bun "/Users/ianquah/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'
 
 # Tool Initialization
 zvm_after_init_commands+=('source <(fzf --zsh)')
@@ -73,6 +74,8 @@ eval "$(uvx --generate-shell-completion zsh)"
 
 # Theme Configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[[ ! -r '/Users/ianquah/.opam/opam-init/init.zsh' ]] || source '/Users/ianquah/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -92,3 +95,11 @@ eval "$(uvx --generate-shell-completion zsh)"
 # <<< conda initialize <<<
 
 export PATH="$(brew --prefix)/opt/llvm/bin:$PATH" # Needs to be here, if not brew isn't detected properly
+
+# bun completions
+[ -s "/Users/ianquah/.bun/_bun" ] && source "/Users/ianquah/.bun/_bun"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

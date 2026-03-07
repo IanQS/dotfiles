@@ -30,6 +30,7 @@ name = "python"
 language-id = "python"
 auto-format = true
 language-servers = ["basedpyright", "ruff", "scls", "codebook"]
+# language-servers = ["pyrefly", "ruff", "scls", "codebook"]
 file-types = ["py", "ipynb"]
 comment-token = "#"
 shebangs = ["python"]
@@ -239,3 +240,15 @@ command = "clippy"
 
 [language-server.rust-analyzer.config.cargo]
 features = "all"
+
+#########################################
+# LANGUAGE: Ocaml
+#########################################
+
+[[language]]
+name = "ocaml"
+formatter = { command = "ocamlformat", args = [
+  "-",
+  "--impl",
+  # "--enable-outside-detected-project", # Enable only if you want to format files outside of projects
+] }
