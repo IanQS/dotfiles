@@ -6,3 +6,4 @@ export EDITOR="hx"
 # Basic PATH that's needed everywhere
 export PATH="$HOME/.local/bin:$PATH"
 export FLYWIRE_DATA_PATH="$HOME/flywire_data"
+. "$HOME/.cargo/env"

@@ -94,12 +94,22 @@ eval "$(uvx --generate-shell-completion zsh)"
 # unset __conda_setup
 # <<< conda initialize <<<
 
-export PATH="$(brew --prefix)/opt/llvm/bin:$PATH" # Needs to be here, if not brew isn't detected properly
+# Load plugin manager
+case "$(uname -sr)" in
+    Darwin*)
+	export PATH="$(brew --prefix)/opt/llvm/bin:$PATH" # Needs to be here, if not brew isn't detected properly
+	# bun completions
+	[ -s "/Users/ianquah/.bun/_bun" ] && source "/Users/ianquah/.bun/_bun"
+        ;;
+    Linux*)
+        ;;
+esac
 
-# bun completions
-[ -s "/Users/ianquah/.bun/_bun" ] && source "/Users/ianquah/.bun/_bun"
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+
+. "$HOME/.local/bin/env"

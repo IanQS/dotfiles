@@ -31,21 +31,14 @@ gpu-stat
 
 ## Cargo
 
-bat
-bottom
-du-dust
-exa
-fd-find
-git-delta
-git-graph
-gitui
-markdown-oxide
-mdpls
-ripgrp
-simple-completion-language-server
-tealdeer
-texlab
-zoxide
+```rust
+cargo install bat ripgrep exa gitui mdpls git-graph texlab zoxide eza du-dust bottom tealdeer fd-find procs simple-completion-language-server git-delta
+
+cargo install --locked --git https://github.com/Feel-ix-343/markdown-oxide.git markdown-oxide
+cargo install --git https://github.com/euclio/mdpls
+cargo install --locked --git https://github.com/estin/simple-completion-language-server.git
+
+```
 
 ## LSP Stuff
 
