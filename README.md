@@ -44,3 +44,7 @@ ln -Tsf $PWD/runtime ~/.cargo/bin/runtime
 # Probably not necessary
 # ln -Tsf $PWD/runtime ~/.config/helix/runtime
 ```
+
+## Tmux
+
+When you install you might run into some weird path stuff. Make sure your tmux is reading from the right location

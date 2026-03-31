@@ -28,10 +28,6 @@ case "$PRETTY_NAME" in
         ;;
 esac
 
-# Setup Tmux
-echo "Setting up Tmux..."
-curl -fsSL "https://github.com/gpakosz/.tmux/raw/refs/heads/master/install.sh#$(date +%s)" | bash
-
 # Antigen
 echo "Downloading Antigen..."
 curl -L git.io/antigen > ~/antigen.zsh
@@ -80,3 +76,8 @@ echo "Check bottom of file to see things that need to be installed via `yay`"
 #   - nitrogen
 
 # helix
+ 
+# Setup Tmux
+echo "Setting up Tmux... make sure you check the paths and where the local conf gets saved"
+curl -fsSL "https://github.com/gpakosz/.tmux/raw/refs/heads/master/install.sh#$(date +%s)" | bash
+
