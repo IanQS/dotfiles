@@ -94,7 +94,6 @@ eval "$(uvx --generate-shell-completion zsh)"
 # unset __conda_setup
 # <<< conda initialize <<<
 
-# Load plugin manager
 case "$(uname -sr)" in
     Darwin*)
 	export PATH="$(brew --prefix)/opt/llvm/bin:$PATH" # Needs to be here, if not brew isn't detected properly
@@ -102,6 +101,7 @@ case "$(uname -sr)" in
 	[ -s "/Users/ianquah/.bun/_bun" ] && source "/Users/ianquah/.bun/_bun"
         ;;
     Linux*)
+    export HELIX_RUNTIME=~/helix/runtime
         ;;
 esac
 

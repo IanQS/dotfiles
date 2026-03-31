@@ -22,24 +22,25 @@ stow .
 
 TADAAAAAAAAA it's done. Someday I'll learn how `stow` actually works, but I couldn't care less now
 
-# Packages:
+## Changing Lock and Login screen
 
-Antigen
-oh-my-zsh
-helix
-gpu-stat
+### Login Screen
 
-## Cargo
+1) Check if you have `/etc/lightdm/slick-greeter.conf`. If you do not, you gotta google... if you do...
 
-```rust
-cargo install bat ripgrep exa gitui mdpls git-graph texlab zoxide eza du-dust bottom tealdeer fd-find procs simple-completion-language-server git-delta
+2) move the wallpaper of interest to `/usr/share/endeavouros/backgrounds/`
 
-cargo install --locked --git https://github.com/Feel-ix-343/markdown-oxide.git markdown-oxide
-cargo install --git https://github.com/euclio/mdpls
-cargo install --locked --git https://github.com/estin/simple-completion-language-server.git
+3) Edit the `conf` from step 1 to point the background to the new file
 
+## Helix
+
+(Only relevant if you built from source)
+
+If you do not have any color showing up, make sure you link the runtimes. Wherever you installed helix, you want to softlink the location!
+
+```sh
+ln -Tsf $PWD/runtime ~/.cargo/bin/runtime
+
+# Probably not necessary
+# ln -Tsf $PWD/runtime ~/.config/helix/runtime
 ```
-
-## LSP Stuff
-
-See helix [README.md](.config/helix/README.md)
