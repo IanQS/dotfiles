@@ -1,3 +1,5 @@
+# Based on the helix branch from https://github.com/gj1118/helix, which integrates in
+# a bunch of changes
 theme = "monokai_pro_spectrum"
 
 [editor]
@@ -8,22 +10,36 @@ true-color = true
 rulers = [80, 120]
 color-modes = true
 completion-timeout = 15
-bufferline = "multiple"
+# bufferline = "multiple"
 jump-label-alphabet = "jfkdls;aurieowpqnvmcxz"
 default-yank-register = '+'
+fold-textobjects = ["comment"] # Example: fold all comments on open
+end-of-line-diagnostics="error"
 
+[editor.inline-diagnostics]
+cursor-line = "disable"
+other-lines = "disable"
+max-diagnostics = 2
 
+[editor.cmdline]
+# Command line style: "bottom" (default) or "popup" (noice.nvim style)
+style = "popup"
+min-popup-width = 80
+show-icons = false
 
-# end-of-line-diagnostics="warning"
-
-# [editor.inline-diagnostics]
-# cursor-line = "error"
-# other-lines = "warning"
-# max-diagnostics = 2
-
+[editor.notifications]
+enable = true              # Enable notification system
+style = "popup"            # "popup" (noice-style) or "statusline" (traditional)
+position = "top-right"     # Position: "top-right", "top-left", "bottom-right", "bottom-left"
+max-width = 60             # Maximum width for notification popups
+max-height = 10            # Maximum height for notification popups
+default-timeout = 2000     # Default timeout in milliseconds (0 = no timeout)
+show-icons = true          # Show notification type icons
+# show-emojis = true         # Show notification type emojis
+max-history = 100          # Maximum notifications to keep in history
 
 [editor.statusline]
-left = ["mode", "spinner", "file-name"]
+left = ["mode", "spinner", "file-name", "function-name"]
 right = ["diagnostics", "separator", "workspace-diagnostics", "selections", "position"]
 separator = "│"
 mode.normal = "NOR"
@@ -47,6 +63,12 @@ enable = true
 '[' = ']'
 '"' = '"'
 '`' = '`'
+
+# Of course, you could have it reload on focus and at an interval too:
+[editor.auto-reload]
+focus-gained = true
+periodic.enable = true
+periodic.interval = 500
 
 [editor.lsp]
 # Disable automatically popups of signature parameter help
