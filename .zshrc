@@ -102,6 +102,7 @@ case "$(uname -sr)" in
         ;;
     Linux*)
     export HELIX_RUNTIME=~/helix/runtime
+. "$HOME/.local/bin/env"
         ;;
 esac
 
@@ -112,4 +113,3 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-. "$HOME/.local/bin/env"
