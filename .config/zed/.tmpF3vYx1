@@ -1,0 +1,6 @@
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Extension","extension_id":"log","version":"0.0.3"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Extension","extension_id":"the-dark-side","version":"0.2.5"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Extension","extension_id":"zedokai","version":"1.1.0"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Setting","setting":"theme","value":"One Dark"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Setting","setting":"keymap","value":"VSCode"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"App","operation":"open"}

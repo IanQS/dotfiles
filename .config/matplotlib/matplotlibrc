@@ -1,0 +1,120 @@
+# =============================================================================
+# matplotlibrc — Tufte-inspired style
+# Principle: maximise data-ink ratio (Tufte's The Visual Display of
+#             Quantitative Information). Every non-data element should earn
+#             its place or be removed.
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# FONTS
+# Serif fonts read better in print and match most journal / thesis typesetting.
+# The fallback chain goes: preferred → common free alternatives → system default.
+# mathtext.fontset: cm  keeps math rendering consistent with LaTeX output.
+# -----------------------------------------------------------------------------
+font.family   : serif
+font.style    : normal
+font.variant  : normal
+font.weight   : normal
+font.stretch  : normal
+font.size     : 12
+
+font.serif      : NewComputerModern10, Latin Modern Roman, DejaVu Serif, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
+font.sans-serif : NewComputerModernSans10, Latin Modern Sans, DejaVu Sans, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica, Avant Garde, sans-serif
+font.monospace  : NewComputerModernMono10, Latin Modern Mono, DejaVu Sans Mono, Andale Mono, Nimbus Mono L, Courier New, Courier, Fixed, Terminal, monospace
+
+mathtext.fontset : cm   # Computer Modern — consistent with LaTeX
+
+axes.labelsize  : 12
+axes.titlesize  : 13
+xtick.labelsize : 10
+ytick.labelsize : 10
+legend.fontsize : 10
+
+
+# -----------------------------------------------------------------------------
+# FIGURE SIZE & DPI
+# 4×3 inches fits neatly in half an A4 / letter column.
+# Screen DPI of 100 is comfortable; saving at 300 ensures print quality.
+# -----------------------------------------------------------------------------
+figure.figsize : 4, 3
+figure.dpi     : 100
+
+savefig.dpi         : 300
+savefig.bbox        : tight    # never clip axis labels on save
+savefig.pad_inches  : 0.05     # minimal whitespace around saved figure
+
+
+# -----------------------------------------------------------------------------
+# LAYOUT
+# autolayout (~tight_layout) automatically adjusts subplot params so labels
+# don't overlap. Prefer this over manually calling tight_layout() every time.
+# -----------------------------------------------------------------------------
+figure.autolayout : True
+
+
+# -----------------------------------------------------------------------------
+# SPINES
+# Removing top + right spines eliminates two lines that carry zero information.
+# The bottom and left spines are kept to anchor the tick marks.
+# (Uncommenting the bottom/left lines gives a fully floating axes — dramatic,
+#  but requires explicit use of breathe() / data_lim() to look right.)
+# -----------------------------------------------------------------------------
+axes.spines.top    : False
+axes.spines.right  : False
+# axes.spines.bottom : False   # uncomment for full Tufte floating axes
+# axes.spines.left   : False   # uncomment for full Tufte floating axes
+
+
+# -----------------------------------------------------------------------------
+# LINES & AXES WEIGHT
+# Thinner lines read as more precise and reduce visual clutter.
+# axes.linewidth controls the spine thickness.
+# -----------------------------------------------------------------------------
+lines.linewidth : 1
+lines.markersize : 5
+axes.linewidth  : 0.5
+
+
+# -----------------------------------------------------------------------------
+# TICKS
+# Outward ticks don't intrude on the data area.
+# Minor ticks are off by default — enable per-plot when needed.
+# -----------------------------------------------------------------------------
+xtick.direction     : out
+ytick.direction     : out
+xtick.major.size    : 4
+ytick.major.size    : 4
+xtick.minor.visible : False
+ytick.minor.visible : False
+
+
+# -----------------------------------------------------------------------------
+# GRID
+# A subtle grid helps readers trace values without dominating the data.
+# Dashed lines at low alpha are present but unobtrusive.
+# -----------------------------------------------------------------------------
+axes.grid   : True
+grid.linestyle : --
+grid.alpha  : 0.4
+grid.color  : 888888
+
+
+# -----------------------------------------------------------------------------
+# COLOUR CYCLE
+# First colour is black — for single-series plots you almost always want black.
+# The remaining colours follow matplotlib's default tab10 palette, which is
+# perceptually distinct and reasonably colorblind-friendly.
+# Replace with a dedicated colorblind palette (e.g. Paul Tol's) if accessibility
+# is a hard requirement.
+# -----------------------------------------------------------------------------
+axes.prop_cycle : cycler('color', ['000000', '1f77b4', 'ff7f0e', '2ca02c', 'd62728', '9467bd', '8c564b', 'e377c2', '7f7f7f', 'bcbd22', '17becf'])
+
+
+# -----------------------------------------------------------------------------
+# LEGEND
+# fancybox: False — square corners, less decorative
+# frameon:  False — removes the bounding box entirely (chartjunk)
+# -----------------------------------------------------------------------------
+legend.fancybox : False
+legend.frameon  : False
