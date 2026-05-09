@@ -46,6 +46,7 @@ setopt INC_APPEND_HISTORY SHARE_HISTORY HIST_IGNORE_DUPS EXTENDED_HISTORY
 # Modern Command Replacements
 alias ls='eza'
 alias la='eza -lah'
+alias ollamaLogs='journalctl -u ollama --no-pager --follow --pager-end'
 alias diff='delta'
 alias vim='hx'
 alias top='bottom'
@@ -111,5 +112,4 @@ esac
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
