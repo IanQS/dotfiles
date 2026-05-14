@@ -29,43 +29,18 @@ feature_citations = false            # enable citation completion (only on `cita
 name = "python"
 language-id = "python"
 auto-format = true
-language-servers = ["basedpyright", "ruff", "scls", "codebook"]
-# language-servers = ["pyrefly", "ruff", "scls", "codebook"]
+language-servers = ["pyrefly", "ruff", "scls", "codebook"]
 file-types = ["py", "ipynb"]
 comment-token = "#"
 shebangs = ["python"]
 roots = ["pyproject.toml", "setup.py", "poetry.lock", ".git", ".jj", ".venv/"]
 
-
-########################################
-# 
-########################################
-[language-server.ty]
-command = "ty"
-args = ["server"]
-
-# [language-server.ty.experimental.completions]
-# enable = true
-# ty.experimental.completions.enable": true
-
-########################################
-# https://docs.basedpyright.com/latest/configuration/language-server-settings/
-########################################
-[language-server.basedpyright]
-command = "basedpyright-langserver"
-args = ["--stdio"]
-config.reportMissingtypeStubs = true
-except-features = ["format"]
-reportUnusedImport = false
-
-[language-server.basedpyright.config.basedpyright.analysis]
-autoSearchPaths = true
-diagnosticMode = "workspace"  # "openFilesOnly"
-useLibraryCodeForTypes = true
-autoImportCompletions = true
-typeCheckingMode = "standard"
-# typeCheckingMode = "recommended"
-disableTaggedHints = false
+#########################################
+# https://pyrefly.org/en/docs/configuration/
+#########################################
+[language-server.pyrefly]
+command = "pyrefly"
+args = ["lsp"]
 
 
 # ########################################
