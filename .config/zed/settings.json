@@ -18,6 +18,24 @@
     "light": "Gruvbox Light",
     "dark": "Gruvbox Dark"
   },
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "theme": "Zedokai Classic",
   "show_signature_help_after_edits": true,
   "auto_signature_help": true,
   "autosave": "on_focus_change",
