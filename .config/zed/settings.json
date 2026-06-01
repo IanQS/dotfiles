@@ -7,6 +7,10 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "disable_ai": true,
+  "which_key": {
+    "enabled": true
+  },
   "vim_mode": true,
   "icon_theme": {
     "mode": "dark",
