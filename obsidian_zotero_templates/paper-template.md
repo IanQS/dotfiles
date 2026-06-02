@@ -6,9 +6,10 @@ Year: {{date|format("YYYY")}}
 Publisher: {{publicationTitle}}
 Keywords: [{{allTags}}]
 Citekey: {{citekey}}
+{% persist "frontmatter_tags" %}
 Tags:
 Status: reading
-
+{% endpersist %}
 ---
 
 ```meta-bind-button
@@ -45,17 +46,18 @@ action:
 
 # Self Notes
 
-{% persist "notes" %}
-
 ## Why I'm reading this
+{% persist "why_reading" %}
 
 -
+{% endpersist %}
 
 ## Summary / Thoughts
+{% persist "summary_thoughts" %}
 
 -
-
 {% endpersist %}
+
 
 ---
 
