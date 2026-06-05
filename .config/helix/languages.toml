@@ -138,9 +138,10 @@ args = ["--dark-mode","--enable-emoji", "--enable-wikilinks", "--full-sync", "--
 #########################################
 # LANGUAGE: LaTeX
 ######################################### 
+
 [[language]]
 name = "latex"
-language-servers = ["texlab", "ltex-ls-plus", "scls"] # ltex provides some autocompletion/grammar suggestions
+language-servers = ["texlab", "ltex", "scls"] # "ltex" must match the [language-server.ltex] definition below, else your dictionary is ignored
 
 [language-server.ltex]
 command = "ltex-ls-plus"
@@ -155,29 +156,20 @@ command = "texlab"
 onOpenAndSave = true
 onEdit = true
 
-# Okay, so the following is REALLY useful, but you probably only want to activate it on a desktop bc it's expensive battery-wise
+# REALLY useful, but build-on-save is battery-expensive, so leave it off globally
+# and enable it per-project. Check out the local `.helix/languages` in
+# https://github.com/IanQS/latex_template
 # [language-server.texlab.config.texlab.build]
-# auxDirectory = "output"
+# executable = "latexmk"
+# args = ["-outdir=build", "-interaction=nonstopmode", "%f"]
+# auxDirectory = "build"
 # onSave = true
 # forwardSearchAfter = true
-# executable = "latexmk"
-# args = [
-#   # "-pdf"
-#   "-pvc",
-#   "-outdir=build",
-#   "-auxdir=build",
-#   "-interaction=nonstopmode",
-#   # Sync
-#   "-synctex=1",
 
-#   # "-shell-escape",
-#   # Specify the compiler
-#   "-lualatex",
-# ]
-
+# Commented out BC MacOS is having some issues w. Zathura 
 # [language-server.texlab.config.texlab.forwardSearch]
 # executable = "zathura"
-# args = [ "--synctex-forward", "%l:%f", "./build/%p" ]
+# args = ["--synctex-forward", "%l:%f", "./build/%p"]
 #########################################
 # LANGUAGE: Rust
 #########################################
