@@ -152,17 +152,19 @@ command = "ltex-ls-plus"
 [language-server.texlab]
 command = "texlab"
 
-[language-server.texlab.config.chktex]
+[language-server.texlab.config.texlab.chktex]
 onOpenAndSave = true
 onEdit = true
 
 # REALLY useful, but build-on-save is battery-expensive, so leave it off globally
 # and enable it per-project. Check out the local `.helix/languages` in
 # https://github.com/IanQS/latex_template
+# [language-server.texlab.config.texlab]
+# auxDirectory = "build"          # top-level key -- NOT a child of .build
 # [language-server.texlab.config.texlab.build]
 # executable = "latexmk"
 # args = ["-outdir=build", "-interaction=nonstopmode", "%f"]
-# auxDirectory = "build"
+# pdfDirectory = "build"          # where the built PDF lands (matches -outdir)
 # onSave = true
 # forwardSearchAfter = true
 
