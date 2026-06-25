@@ -116,6 +116,13 @@ C-g = [
     ":reload-all"
 ]
 
+[keys.normal.z]
+# Toggle the fold at the cursor. `toggle_fold` is the only fold command that
+# considers textobjects, `folds.scm` syntax regions, AND arbitrary multi-line
+# nodes, so it folds things `:fold --all` misses (e.g. latex sections, which are
+# syntax/`class.around` captures without a `.inside`).
+f = "toggle_fold"
+
 [keys.normal.g]
 a = "code_action" # Maps `ga` to show possible code actions
 
