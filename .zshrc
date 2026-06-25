@@ -12,6 +12,8 @@ case "$(uname -sr)" in
         source ~/antigen.zsh
         ;;
     Linux*)
+        eval "$(keychain --eval --quiet id_ed25519)"
+
         source ~/antigen.zsh || source /usr/share/zsh/share/antigen.zsh
         ;;
 esac
