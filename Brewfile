@@ -32,7 +32,13 @@ brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Play, record, convert, and stream select audio and video codecs
-brew "ffmpeg"
+brew "ffmpeg", link: false
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# MP3 player for Linux and UNIX
+brew "mpg123"
+# Play, record, convert, and stream many audio and video codecs
+brew "ffmpeg-full", link: true
 # C/C++ and Java libraries for Unicode and globalization
 brew "icu4c@76"
 # Command-line fuzzy finder written in Go
@@ -43,8 +49,6 @@ brew "libffi"
 brew "gemini-cli"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Graph visualization software from AT&T and Bell Labs
@@ -62,7 +66,9 @@ brew "htop"
 # Website copier/offline browser
 brew "httrack"
 # Tools and libraries to manipulate images in select formats
-brew "imagemagick"
+brew "imagemagick", link: false
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick-full", link: true
 # C library for encoding, decoding, and manipulating JSON
 brew "jansson"
 # Lightweight and flexible command-line JSON processor
@@ -71,14 +77,10 @@ brew "jq"
 brew "krb5"
 # Simple terminal UI for git commands
 brew "lazygit"
-# Terminal file manager
-brew "lf"
 # JIT library for the GNU compiler collection
 brew "libgccjit"
 # Conversion library
 brew "libiconv"
-# MP3 player for Linux and UNIX
-brew "mpg123"
 # GNOME XML library
 brew "libxml2"
 # X.Org: X Resize, Rotate and Reflection extension library
@@ -135,6 +137,8 @@ brew "pv"
 brew "pygments"
 # Pure Python Vim clone
 brew "pyvim"
+# SVG rendering tool and library
+brew "resvg"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Powerful, clean, object-oriented scripting language
@@ -159,6 +163,8 @@ brew "vale"
 brew "wget"
 # Generate your Xcode project from a spec file and your folder structure
 brew "xcodegen"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
 # General-purpose lossless data-compression library
 brew "zlib"
 # Fast static site generator in a single binary with everything built-in
