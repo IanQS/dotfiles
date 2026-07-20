@@ -205,7 +205,6 @@ cask "font-hack-nerd-font"
 cask "font-symbols-only-nerd-font"
 # Kext-less implementation of FUSE
 cask "fuse-t"
-cask "fuse-t-sshfs"
 # Web browser
 cask "google-chrome"
 # Automated organisation

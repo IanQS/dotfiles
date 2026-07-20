@@ -1,0 +1,14 @@
+[[plugin.deps]]
+use = "pakhromov/to-pdf-preview"
+rev = "ce21e01"
+hash = "fe270b645ce168eb5016c1e3154e054c"
+
+[[plugin.deps]]
+use = "AminurAlam/yazi-plugins:preview-git"
+rev = "ce325af"
+hash = "ba369f2f02be9e932cf7882c113d6844"
+
+[[flavor.deps]]
+use = "malick-tammal/monokai"
+rev = "57be034"
+hash = "9fbb5104646853a933446746b88118a6"
