@@ -101,11 +101,13 @@ C-k     = ["page_up", "goto_window_top"]
 "[" = {f = ["goto_prev_function", "collapse_selection"], F=["goto_prev_function", "flip_selections"]}
 
 C-y = [
-  ':sh rm -f /tmp/unique-file',
-  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
-  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
-  ':open %sh{cat /tmp/unique-file}',
-  ':redraw',
+	':sh rm -f /tmp/unique-ca1ea106',
+	':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-ca1ea106',
+	':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+	':open %sh{cat /tmp/unique-ca1ea106}',
+	':redraw',
+	':set mouse false',
+  ':set mouse true',
 ]
 C-g = [
     ":write-all",
@@ -140,3 +142,4 @@ n = ":buffer-next"
 "g" = { "e" = "extend_to_file_end" }
 "]" = {f = ["goto_next_function", "flip_selections", "collapse_selection"], F=["goto_next_function", "flip_selections"]}
 "[" = {f = ["goto_prev_function", "collapse_selection"], F=["goto_prev_function", "flip_selections"]}
+

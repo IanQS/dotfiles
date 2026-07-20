@@ -467,6 +467,11 @@ set -g @plugin 'spywhere/tmux-named-snapshot'
 set -g @named-snapshot-restore 'C-n:manual C-o:main'
 set -g @named-snapshot-save 'C-m:manual C-p:main'
 
+# Yazi Image previewer
+set -g allow-passthrough on
+set -ga update-environment TERM
+set -ga update-environment TERM_PROGRAM
+
 # -- custom variables ----------------------------------------------------------
 
 # to define a custom #{foo} variable, define a POSIX shell function between the
