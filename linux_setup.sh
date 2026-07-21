@@ -56,7 +56,7 @@ sudo pacman -Su --noconfirm libxi libxrender alsa-utils alsa-card-profiles alsa-
 # Rust Stuff
 
 echo "Installing cargo packages..."
-cargo install bat ripgrep exa gitui mdpls git-graph texlab zoxide eza du-dust bottom tealdeer fd-find procs simple-completion-language-server git-delta
+cargo install bat ripgrep gitui git-graph texlab zoxide eza du-dust bottom tealdeer fd-find procs git-delta
 
 ## Individual Rust packages (markdown-oxide, scls, mdpls
 echo "Installing cargo packages from git sources..."

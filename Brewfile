@@ -147,8 +147,6 @@ brew "ruby", link: false
 brew "scooter"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
-# Command driven spotify player
-brew "spotify_player"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # High-performance system programming language
@@ -239,16 +237,12 @@ cask "super-productivity"
 cask "the-unarchiver"
 # Run commands and display their output on the desktop
 cask "ubersicht"
-# Open-source code editor
-cask "visual-studio-code"
 # Web browser with built-in email client focusing on customization and control
 cask "vivaldi"
 # Multimedia player
 cask "vlc"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
-# Multiplayer code editor
-cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
 # Collect, organise, cite, and share research sources
@@ -293,7 +287,6 @@ vscode "nickfode.latex-formatter"
 vscode "oderwat.indent-rainbow"
 vscode "ritwickdey.liveserver"
 vscode "saoudrizwan.claude-dev"
-vscode "shyykoserhiy.vscode-spotify"
 vscode "sswg.swift-lang"
 vscode "swiftlang.swift-vscode"
 vscode "tecosaur.latex-utilities"
@@ -317,7 +310,6 @@ cargo "cargo-watch"
 cargo "codebook-lsp"
 cargo "coreutils"
 cargo "du-dust"
-cargo "exa"
 cargo "fd-find"
 cargo "git-delta"
 cargo "git-graph"
@@ -327,7 +319,6 @@ cargo "ripgrep"
 cargo "rustlings"
 cargo "selene"
 cargo "simple-completion-language-server"
-cargo "spotify_player"
 cargo "steel-forge"
 cargo "steel-interpreter"
 cargo "steel-language-server"
