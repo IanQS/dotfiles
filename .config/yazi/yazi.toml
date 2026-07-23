@@ -6,7 +6,7 @@
 [mgr]
 # ratio          = [ 1, 4, 3 ]
 ratio          = [ 1, 2, 5 ]
-sort_by        = "alphabetical"
+sort_by        = "natural"
 sort_sensitive = false
 sort_reverse 	 = false
 sort_dir_first = true
@@ -21,12 +21,12 @@ mouse_events   = [ "click", "scroll", "drag" ]
 [preview]
 wrap            = "no"
 tab_size        = 2
-max_width       = 600
-max_height      = 900
+max_width       = 1500
+max_height      = 1500
 cache_dir       = ""
 image_delay     = 30
 image_filter    = "triangle"
-image_quality   = 75
+image_quality   = 90
 ueberzug_scale  = 1
 ueberzug_offset = [ 0, 0, 0, 0 ]
 
@@ -95,7 +95,7 @@ preload_workers  = 2
 process_workers  = 5
 bizarre_retry    = 3
 image_alloc      = 536870912  # 512MB
-image_bound      = [ 10000, 10000 ]
+image_bound      = [ 30000, 30000 ]
 suppress_preload = false
 [input]
 cursor_blink = false
