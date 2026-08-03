@@ -26,11 +26,11 @@ TADAAAAAAAAA it's done. Someday I'll learn how `stow` actually works, but I coul
 
 ### Login Screen
 
-1) Check if you have `/etc/lightdm/slick-greeter.conf`. If you do not, you gotta google... if you do...
+1. Check if you have `/etc/lightdm/slick-greeter.conf`. If you do not, you gotta google... if you do...
 
-2) move the wallpaper of interest to `/usr/share/endeavouros/backgrounds/`
+2. move the wallpaper of interest to `/usr/share/endeavouros/backgrounds/`
 
-3) Edit the `conf` from step 1 to point the background to the new file
+3. Edit the `conf` from step 1 to point the background to the new file
 
 ## Helix
 
@@ -48,3 +48,19 @@ ln -Tsf $PWD/runtime ~/.cargo/bin/runtime
 ## Tmux
 
 When you install you might run into some weird path stuff. Make sure your tmux is reading from the right location
+
+## Rust Packages
+
+```
+cargo install bat ripgrep gitui git-graph texlab zoxide eza du-dust bottom tealdeer fd-find procs git-delta
+
+
+cargo install --locked --git https://github.com/Feel-ix-343/markdown-oxide.git markdown-oxide && cargo install --locked --git https://github.com/estin/simple-completion-language-server.git
+```
+
+We then need to fetch the new snippets:
+
+```
+simple-completion-language-server fetch-external-snippets
+simple-completion-language-server validate-snippets
+```

@@ -133,7 +133,7 @@ formatter = { command = "prettier", args = ["--parser", "markdown"] }
 
 [language-server.mpls]
 command = "mpls"
-args = ["--dark-mode","--enable-emoji", "--enable-wikilinks", "--full-sync", "--browser", "Firefox", "--port", "8080"]
+args = ["--theme", "dracula","--enable-emoji", "--enable-wikilinks", "--full-sync", "--browser", "Firefox", "--port", "8080", "--tabs"]
 
 #########################################
 # LANGUAGE: LaTeX
