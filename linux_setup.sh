@@ -64,3 +64,4 @@ sudo pacman -Su --noconfirm libxi libxrender alsa-utils alsa-card-profiles alsa-
 echo "Setting up Tmux... make sure you check the paths and where the local conf gets saved"
 curl -fsSL "https://github.com/gpakosz/.tmux/raw/refs/heads/master/install.sh#$(date +%s)" | bash
 
+yay marksman
