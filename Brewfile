@@ -8,6 +8,7 @@ tap "kanriapp/cask"
 tap "largemodgames/spotatui", "https://github.com/LargeModGames/homebrew-spotatui"
 tap "lusingander/tap"
 tap "macos-fuse-t/cask"
+tap "mhersson/formulas", trusted: true
 tap "stripe/stripe-cli"
 # Zstandard is a real-time compression algorithm
 brew "zstd"
@@ -31,22 +32,18 @@ brew "coreutils"
 brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# MP3 player for Linux and UNIX
+brew "mpg123"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg", link: false
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
-# MP3 player for Linux and UNIX
-brew "mpg123"
 # Play, record, convert, and stream many audio and video codecs
 brew "ffmpeg-full", link: true
 # C/C++ and Java libraries for Unicode and globalization
 brew "icu4c@76"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# Portable Foreign Function Interface library
-brew "libffi"
-# Interact with Google Gemini AI models from the command-line
-brew "gemini-cli"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
 # Open source programming language to build simple/reliable/efficient software
@@ -66,9 +63,9 @@ brew "htop"
 # Website copier/offline browser
 brew "httrack"
 # Tools and libraries to manipulate images in select formats
-brew "imagemagick", link: false
+brew "imagemagick"
 # Tools and libraries to manipulate images in many formats
-brew "imagemagick-full", link: true
+brew "imagemagick-full"
 # C library for encoding, decoding, and manipulating JSON
 brew "jansson"
 # Lightweight and flexible command-line JSON processor
@@ -77,6 +74,8 @@ brew "jq"
 brew "krb5"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Portable Foreign Function Interface library
+brew "libffi"
 # JIT library for the GNU compiler collection
 brew "libgccjit"
 # Conversion library
@@ -97,12 +96,8 @@ brew "luarocks"
 brew "mailutils"
 # Utility for directing compilation
 brew "make"
-# Personal Knowledge Management System for the LSP
-brew "markdown-oxide"
 # CLI for Node.js style checker and lint tool for Markdown files
 brew "markdownlint-cli"
-# Language Server Protocol for Markdown
-brew "marksman"
 # Lightweight PDF and XPS viewer
 brew "mupdf"
 # Cross-platform ncurses Spotify client written in Rust
@@ -179,6 +174,8 @@ brew "browsh-org/browsh/browsh", trusted: true
 brew "iwe-org/iwe/iwe", trusted: true
 # A rich git commit graph in your terminal, like magic
 brew "lusingander/tap/serie", trusted: true
+# Markdown Preview Language Server with live browser preview
+brew "mhersson/formulas/mpls"
 # Application launcher and productivity software
 cask "alfred"
 # Enable Windows-like alt-tab
@@ -215,10 +212,10 @@ cask "inkscape"
 cask "iterm2"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
-# Noise cancelling application
-cask "krisp"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Toolbox companion for QMK Firmware
+cask "qmk-toolbox"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
 # Instant messaging application focusing on security
@@ -237,12 +234,16 @@ cask "super-productivity"
 cask "the-unarchiver"
 # Run commands and display their output on the desktop
 cask "ubersicht"
+# Open-source code editor
+cask "visual-studio-code"
 # Web browser with built-in email client focusing on customization and control
 cask "vivaldi"
 # Multimedia player
 cask "vlc"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
+# Multiplayer code editor
+cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
 # Collect, organise, cite, and share research sources
@@ -287,6 +288,7 @@ vscode "nickfode.latex-formatter"
 vscode "oderwat.indent-rainbow"
 vscode "ritwickdey.liveserver"
 vscode "saoudrizwan.claude-dev"
+vscode "shyykoserhiy.vscode-spotify"
 vscode "sswg.swift-lang"
 vscode "swiftlang.swift-vscode"
 vscode "tecosaur.latex-utilities"
@@ -315,10 +317,13 @@ cargo "git-delta"
 cargo "git-graph"
 cargo "gitui"
 cargo "helix-term"
+cargo "markdown-oxide"
+cargo "procs"
 cargo "ripgrep"
 cargo "rustlings"
 cargo "selene"
 cargo "simple-completion-language-server"
+cargo "spotify_player"
 cargo "steel-forge"
 cargo "steel-interpreter"
 cargo "steel-language-server"
