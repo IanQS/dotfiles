@@ -137,30 +137,45 @@ args = ["--theme", "dracula","--enable-emoji", "--enable-wikilinks", "--full-syn
 
 #########################################
 # LANGUAGE: LaTeX
-######################################### 
+#########################################
+# [[language]]
+# name = "latex"
+# language-servers = ["texlab", "ltex", "scls"] 
 
-[[language]]
-name = "latex"
-language-servers = ["texlab", "ltex", "scls"] # "ltex" must match the [language-server.ltex] definition below, else your dictionary is ignored
+# [language-server.ltex]
+# command = "ltex-ls-plus"
 
-[language-server.ltex]
-command = "ltex-ls-plus"
+# [language-server.ltex.config.ltex.dictionary]
+# "en-US" = ["ewwe","flaberrasted"]
 
-[language-server.ltex.config.ltex.dictionary]
-"en-US" = ["ewwe","flaberrasted"]
+# [language-server.texlab]
+# command = "texlab"
 
-[language-server.texlab]
-command = "texlab"
+# [language-server.texlab.environment]
+# TEXINPUTS = ".:styles:"
+# BIBINPUTS = ".:"
 
-[language-server.texlab.config.texlab.chktex]
-onOpenAndSave = true
-onEdit = true
+# # chktex lives under the `texlab` namespace -- without it the linting is silently off.
+# [language-server.texlab.config.texlab.chktex]
+# onOpenAndSave = true
+# onEdit = true
+
+# # auxDirectory is a TOP-LEVEL texlab key, not a child of `build`; nesting it under
+# # build makes texlab ignore it and assume aux/PDF sit at the repo root.
+# [language-server.texlab.config.texlab]
+# auxDirectory = "build"
+
+# [language-server.texlab.config.texlab.completion]
+# matcher = "prefix-ignore-case"
+
+# # Render the actual symbol glyph (e.g. ∑, α) when hovering a command/symbol,
+# # instead of a textual description.
+# [language-server.texlab.config.texlab.hover]
+# symbols = "glyph"
 
 # REALLY useful, but build-on-save is battery-expensive, so leave it off globally
 # and enable it per-project. Check out the local `.helix/languages` in
 # https://github.com/IanQS/latex_template
-# [language-server.texlab.config.texlab]
-# auxDirectory = "build"          # top-level key -- NOT a child of .build
 # [language-server.texlab.config.texlab.build]
 # executable = "latexmk"
 # args = ["-outdir=build", "-interaction=nonstopmode", "%f"]
