@@ -139,7 +139,7 @@ brew "resvg"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Powerful, clean, object-oriented scripting language
-brew "ruby", link: false
+brew "ruby"
 # Interactive find and replace in the terminal
 brew "scooter"
 # 7-Zip is a file archiver with a high compression ratio
@@ -270,7 +270,7 @@ cargo "steel-forge", source: "https://github.com/mattwparas/steel.git"
 cargo "steel-interpreter", source: "https://github.com/mattwparas/steel.git"
 cargo "steel-language-server", source: "https://github.com/mattwparas/steel.git"
 cargo "tealdeer"
-cargo "texlab"
+cargo "texlab", source: "https://github.com/latex-lsp/texlab?tag=v5.26.0"
 cargo "wasm-bindgen-cli"
 cargo "workshop-runner"
 cargo "zoxide"

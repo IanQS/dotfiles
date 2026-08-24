@@ -135,58 +135,59 @@ formatter = { command = "prettier", args = ["--parser", "markdown"] }
 command = "mpls"
 args = ["--theme", "dracula","--enable-emoji", "--enable-wikilinks", "--full-sync", "--browser", "Firefox", "--port", "8080", "--tabs"]
 
+
 #########################################
 # LANGUAGE: LaTeX
 #########################################
-# [[language]]
-# name = "latex"
-# language-servers = ["texlab", "ltex", "scls"] 
+[[language]]
+name = "latex"
+language-servers = ["texlab", "ltex", "scls"]
 
-# [language-server.ltex]
-# command = "ltex-ls-plus"
+[language-server.ltex]
+command = "ltex-ls-plus"
 
-# [language-server.ltex.config.ltex.dictionary]
-# "en-US" = ["ewwe","flaberrasted"]
+[language-server.ltex.config.ltex.dictionary]
+"en-US" = ["ewwe","flaberrasted"]
 
-# [language-server.texlab]
-# command = "texlab"
+[language-server.texlab]
+command = "texlab"
 
-# [language-server.texlab.environment]
-# TEXINPUTS = ".:styles:"
-# BIBINPUTS = ".:"
+[language-server.texlab.environment]
+TEXINPUTS = ".:styles:"
+BIBINPUTS = ".:"
 
-# # chktex lives under the `texlab` namespace -- without it the linting is silently off.
-# [language-server.texlab.config.texlab.chktex]
-# onOpenAndSave = true
-# onEdit = true
+# chktex lives under the `texlab` namespace -- without it the linting is silently off.
+[language-server.texlab.config.texlab.chktex]
+onOpenAndSave = true
+onEdit = true
 
-# # auxDirectory is a TOP-LEVEL texlab key, not a child of `build`; nesting it under
-# # build makes texlab ignore it and assume aux/PDF sit at the repo root.
-# [language-server.texlab.config.texlab]
-# auxDirectory = "build"
+# Completion matching. The default "fuzzy-ignore-case" does subsequence matching,
+# so typing "shiu" also matches songHighlyNonrandomFeatures2005 and 18 others.
+# "prefix-ignore-case" keeps only keys that START with what you typed, which cuts
+# that same query down to the one real hit.
+[language-server.texlab.config.texlab.completion]
+matcher = "prefix-ignore-case"
 
-# [language-server.texlab.config.texlab.completion]
-# matcher = "prefix-ignore-case"
+# Render the actual symbol glyph (e.g. ∑, α) when hovering a command/symbol,
+# instead of a textual description.
+[language-server.texlab.config.texlab.hover]
+symbols = "glyph"
 
-# # Render the actual symbol glyph (e.g. ∑, α) when hovering a command/symbol,
-# # instead of a textual description.
-# [language-server.texlab.config.texlab.hover]
-# symbols = "glyph"
+[language-server.texlab.config.texlab.build]
+# No executable (texlab already defaults to latexmk), no args, no auxDirectory and
+# no pdfDirectory: .latexmkrc is the single source of truth for the engine and the
+# output path, and texlab reads it to locate the artifacts. Overriding `args` here
+# would REPLACE texlab's defaults ("-pdf", "-interaction=nonstopmode", "-synctex=1",
+# "%f") rather than extend them, which is how the PDF went missing before.
+onSave = true
+forwardSearchAfter = true
 
-# REALLY useful, but build-on-save is battery-expensive, so leave it off globally
-# and enable it per-project. Check out the local `.helix/languages` in
-# https://github.com/IanQS/latex_template
-# [language-server.texlab.config.texlab.build]
-# executable = "latexmk"
-# args = ["-outdir=build", "-interaction=nonstopmode", "%f"]
-# pdfDirectory = "build"          # where the built PDF lands (matches -outdir)
-# onSave = true
-# forwardSearchAfter = true
+# forwardSearchAfter fires after every on-save build, so it needs a viewer or it
+# just errors. Skim's displayline; -g jumps in the background without stealing focus.
+[language-server.texlab.config.texlab.forwardSearch]
+executable = "/Applications/Skim.app/Contents/SharedSupport/displayline"
+args = ["-g", "%l", "%p", "%f"]
 
-# Commented out BC MacOS is having some issues w. Zathura 
-# [language-server.texlab.config.texlab.forwardSearch]
-# executable = "zathura"
-# args = ["--synctex-forward", "%l:%f", "./build/%p"]
 #########################################
 # LANGUAGE: Rust
 #########################################
