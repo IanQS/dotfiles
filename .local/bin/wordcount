@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Read input from argument or stdin
+if [ -z "$1" ]; then
+    input=$(cat)
+else
+    input="$1"
+fi
+
+# Echo the input
+echo "$input"
+
+# Count words and echo the count
+echo "$input" | wc -w
