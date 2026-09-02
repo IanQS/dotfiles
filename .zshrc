@@ -105,7 +105,9 @@ case "$(uname -sr)" in
         ;;
     Linux*)
     export HELIX_RUNTIME=~/helix/runtime
-. "$HOME/.local/bin/env"
+    . "$HOME/.local/bin/env"
+    # Added by the Hunk installer (https://hunk.dev)
+    export PATH='/home/iq/.hunk/bin':"$PATH"
         ;;
 esac
 
@@ -122,3 +124,4 @@ function y() {
 	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
 	command rm -f -- "$tmp"
 }
+
