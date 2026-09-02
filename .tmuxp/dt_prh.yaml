@@ -10,10 +10,10 @@ windows:
 
   - window_name: main
     panes:
-      - cd ~/research/neuro-prh/; source .venv/bin/activate;
+      - cd ~/research/neuro-prh/; source .venv/bin/activate;clear
 
 
   - window_name: src
     panes:
-      - cd ~/research/neuro-prh/; source .venv/bin/activate;
+      - cd ~/research/neuro-prh/; source .venv/bin/activate;clear
 

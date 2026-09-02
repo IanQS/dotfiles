@@ -7,13 +7,13 @@ windows:
 
   - window_name: job_search
     panes:
-      - cd ~/research/job_searcher; source .venv/bin/activate
+      - cd ~/research/job_searcher; source .venv/bin/activate; clear
 
   - window_name: lab_nb
     panes:
-      - cd ~/Documents/Lab\ Notebook
+      - cd ~/Documents/Lab\ Notebook;clear
 
   - window_name: personal_nb
     panes:
-      - cd ~/Documents/personal_vault
+      - cd ~/Documents/personal_vault;clear
 

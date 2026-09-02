@@ -10,13 +10,13 @@ windows:
 
   - window_name: main
     panes:
-      - cd ~/research/synapse_topography/; source .venv/bin/activate;
+      - cd ~/research/synapse_topography/; source .venv/bin/activate;clear
 
 
   - window_name: src
     panes:
-      - cd ~/research/synapse_topography/; source .venv/bin/activate; cd src/synapse_topography
+      - cd ~/research/synapse_topography/; source .venv/bin/activate; cd src/synapse_topography;clear
 
   - window_name: simulations
     panes:
-      - cd ~/research/synapse_topography/; source .venv/bin/activate; cd experiments/simulations
+      - cd ~/research/synapse_topography/; source .venv/bin/activate; cd experiments/simulations;clear
