@@ -18,6 +18,29 @@ case "$(uname -sr)" in
         ;;
 esac
 
+# Load tmuxp sessions: dt_*.yaml on the work desktop (Linux), everything else on the Mac
+loadTmux() {
+    setopt localoptions extendedglob
+    local tmuxp_dir=~/.tmuxp
+    local -a files
+
+    case "$(uname -sr)" in
+        Linux*)
+            files=($tmuxp_dir/dt_*.yaml(N))
+            ;;
+        Darwin*)
+            files=($tmuxp_dir/*.yaml~$tmuxp_dir/dt_*.yaml(N))
+            ;;
+    esac
+
+    if (( ${#files[@]} == 0 )); then
+        echo "loadTmux: no matching tmuxp session files found in $tmuxp_dir"
+        return 1
+    fi
+
+    tmuxp load "${files[@]}"
+}
+
 # Plugin Configuration
 antigen use oh-my-zsh
 
