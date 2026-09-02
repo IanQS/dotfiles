@@ -173,20 +173,20 @@ matcher = "prefix-ignore-case"
 [language-server.texlab.config.texlab.hover]
 symbols = "glyph"
 
-[language-server.texlab.config.texlab.build]
+# [language-server.texlab.config.texlab.build]
 # No executable (texlab already defaults to latexmk), no args, no auxDirectory and
 # no pdfDirectory: .latexmkrc is the single source of truth for the engine and the
 # output path, and texlab reads it to locate the artifacts. Overriding `args` here
 # would REPLACE texlab's defaults ("-pdf", "-interaction=nonstopmode", "-synctex=1",
 # "%f") rather than extend them, which is how the PDF went missing before.
-onSave = true
-forwardSearchAfter = true
+# onSave = true
+# forwardSearchAfter = true
 
-# forwardSearchAfter fires after every on-save build, so it needs a viewer or it
-# just errors. Skim's displayline; -g jumps in the background without stealing focus.
-[language-server.texlab.config.texlab.forwardSearch]
-executable = "/Applications/Skim.app/Contents/SharedSupport/displayline"
-args = ["-g", "%l", "%p", "%f"]
+# # forwardSearchAfter fires after every on-save build, so it needs a viewer or it
+# # just errors. Skim's displayline; -g jumps in the background without stealing focus.
+# [language-server.texlab.config.texlab.forwardSearch]
+# executable = "/Applications/Skim.app/Contents/SharedSupport/displayline"
+# args = ["-g", "%l", "%p", "%f"]
 
 #########################################
 # LANGUAGE: Rust

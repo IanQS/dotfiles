@@ -5,7 +5,7 @@
 	defaultBranch = main
 
 [core]
-    pager = delta
+    pager = hunk pager
 	excludesfile = /Users/ianquah/.gitignore_global
 
 [interactive]
