@@ -1,0 +1,23 @@
+session_name: dgn
+windows:
+  - window_name: admin
+    panes:
+      - htop
+      - gpuWatcher
+
+  - window_name: cli
+    panes:
+      - cd ~/research/dgn_multiclass; source .venv/bin/activate; clear; claude
+
+  - window_name: main
+    panes:
+      - cd ~/research/dgn_multiclass/; source .venv/bin/activate; clear
+
+  - window_name: iclr_write
+    panes:
+      - cd ~/research/dgn_multiclass/; source .venv/bin/activate; cd iclr_writeup; clear
+
+
+  - window_name: cogsci_write
+    panes:
+      - cd ~/research/dgn_multiclass/; source .venv/bin/activate; cd cogsci_writeup; clear

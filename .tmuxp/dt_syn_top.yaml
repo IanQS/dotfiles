@@ -1,0 +1,22 @@
+session_name: syn_top
+windows:
+  - window_name: cli
+    panes:
+      - cd ~/research/synapse_topography; source .venv/bin/activate; clear; claude
+
+  - window_name: marimo_sim_analysis
+    panes:
+      - cd ~/research/synapse_topography; source .venv/bin/activate; marimo edit --headless --port 8080 --token --token-password="lab-gui"
+
+  - window_name: main
+    panes:
+      - cd ~/research/synapse_topography/; source .venv/bin/activate;
+
+
+  - window_name: src
+    panes:
+      - cd ~/research/synapse_topography/; source .venv/bin/activate; cd src/synapse_topography
+
+  - window_name: simulations
+    panes:
+      - cd ~/research/synapse_topography/; source .venv/bin/activate; cd experiments/simulations

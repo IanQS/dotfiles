@@ -1,0 +1,19 @@
+session_name: misc
+windows:
+  - window_name: admin
+    panes:
+      - htop
+      - gpuWatcher
+
+  - window_name: job_search
+    panes:
+      - cd ~/research/job_searcher; source .venv/bin/activate
+
+  - window_name: lab_nb
+    panes:
+      - cd ~/Documents/Lab\ Notebook
+
+  - window_name: personal_nb
+    panes:
+      - cd ~/Documents/personal_vault
+
