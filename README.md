@@ -52,7 +52,7 @@ When you install you might run into some weird path stuff. Make sure your tmux i
 ## Rust Packages
 
 ```
-cargo install bat ripgrep gitui git-graph texlab zoxide eza du-dust bottom tealdeer fd-find procs git-delta codebook-lsp
+cargo install bat ripgrep gitui git-graph texlab zoxide eza du-dust bottom tealdeer fd-find procs git-delta codebook-lsp tex-fmt
 
 
 cargo install --locked --git https://github.com/Feel-ix-343/markdown-oxide.git markdown-oxide && cargo install --locked --git https://github.com/estin/simple-completion-language-server.git && cargo install --git https://github.com/latex-lsp/texlab --locked --tag v5.26.0
