@@ -39,8 +39,6 @@
       "Bash(git pull:*)",
       "Bash(git fetch:*)",
       "Bash(git clone:*)",
-      "Bash(git commit:*)",
-      "Bash(git add:*)"
     ]
   },
   "hooks": {

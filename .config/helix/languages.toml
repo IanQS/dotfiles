@@ -118,6 +118,9 @@ docstring-code-format = true
 indent-style = "space"
 skip-magic-trailing-comma = true
 
+[language-server.ruff.config.settings.lint.isort]
+split-on-trailing-comma = false
+
 
 #########################################
 # LANGUAGE: Markdown
