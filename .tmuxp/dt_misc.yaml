@@ -5,10 +5,6 @@ windows:
       - htop
       - gpuWatcher
 
-  - window_name: job_search
-    panes:
-      - cd ~/research/job_searcher; source .venv/bin/activate; clear
-
   - window_name: lab_nb
     panes:
       - cd ~/Documents/Lab\ Notebook;clear

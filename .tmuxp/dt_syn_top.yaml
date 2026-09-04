@@ -4,7 +4,7 @@ windows:
     panes:
       - cd ~/research/synapse_topography; source .venv/bin/activate; clear; claude
 
-  - window_name: marimo_sim_analysis
+  - window_name: marimo
     panes:
       - cd ~/research/synapse_topography; source .venv/bin/activate; marimo edit --headless --port 8080 --token --token-password="lab-gui"
 

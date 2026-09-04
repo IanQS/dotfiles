@@ -1,0 +1,15 @@
+session_name: search
+windows:
+  - window_name: cli
+    panes:
+      - cd ~/research/job_searcher; source .venv/bin/activate; claude
+
+  - window_name: streamlit
+    panes:
+      - cd ~/research/job_searcher; source .venv/bin/activate; uv run streamlit run ui/app.py
+
+
+  - window_name: job_search
+    panes:
+      - cd ~/research/job_searcher; source .venv/bin/activate; clear
+
