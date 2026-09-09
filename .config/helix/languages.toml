@@ -129,14 +129,14 @@ split-on-trailing-comma = false
 [[language]]
 auto-format = true
 # language-servers = ["marksman", "mpls", "scls", "markdown-oxi"]
-language-servers = ["scls", "marksman"]#,"markdown-oxide"  ]#, "mpls"]#,]
+language-servers = ["scls", "marksman", "mpls"]#,"markdown-oxide"  ]#, "mpls"]#,]
 name = "markdown"
 formatter = { command = "prettier", args = ["--parser", "markdown"] }
 
 
 [language-server.mpls]
 command = "mpls"
-args = ["--theme", "dracula","--enable-emoji", "--enable-wikilinks", "--full-sync", "--browser", "Firefox", "--port", "8080", "--tabs"]
+args = ["--theme", "dracula","--enable-emoji", "--enable-wikilinks", "--full-sync", "--port", "8090", "--tabs", "--no-auto", "--enable-footnotes"]
 
 
 #########################################
