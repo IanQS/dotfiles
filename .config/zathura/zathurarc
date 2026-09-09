@@ -1,3 +1,6 @@
+##############################
+# @General
+##############################
 # General things
 #set recolor true # Dark mode integration for lighthouse
 set selection-clipboard clipboard # Set clipboard copy
@@ -8,9 +11,61 @@ set font 'monospace normal 16'
 # One page per row by default
 set pages-per-row 1
 
-# Keybindings
-map J zoom out
-map K zoom in
+# stop at page boundries
+# set scroll-page-aware "true"
+# set scroll-full-overlap 0.1
+# set scroll-step 5
+
+# zoom settings
+set zoom-min 5
+set guioptions ""
+
+
+##############################
+# @Appearance
+##############################
+
+set completion-bg "#2b2b2b"
+set completion-fg "#e6e6e6"
+set completion-group-bg "#2b2b2b"
+set completion-group-fg "#e6e6e6"
+set completion-highlight-bg "#444444"
+set completion-highlight-fg "#ffffff"
+set default-bg "#2b2b2b"
+set default-fg "#ffffff"
+set highlight-active-color "#a4e400"
+set highlight-color "#ffff87"
+set index-active-bg "#444444"
+set index-active-fg "#ffffff"
+set index-bg "#2b2b2b"
+set index-fg "#ffffff"
+set inputbar-bg "#2b2b2b"
+set inputbar-fg "#ffffff"
+set notification-bg "#2b2b2b"
+set notification-error-bg "#ff005f"
+set notification-error-fg "#ffffff"
+set notification-fg "#ffffff"
+set notification-warning-bg "#ffff87"
+set notification-warning-fg "#444444"
+set recolor-darkcolor "#ffffff"
+set recolor-lightcolor "#2b2b2b"
+set render-loading true
+set render-loading-bg "#ffffff"
+set render-loading-fg "#2b2b2b"
+set statusbar-bg "#1e1e1e"
+set statusbar-fg "#ffffff"
+
+
+##############################
+# @Keybindings
+##############################
+# map J zoom out
+# map K zoom in
+# unmap u # unmaps u and d for default full-up/down scroll
+# unmap d
+# map u scroll full-up
+# map d scroll full-down
+
 unmap f
 map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
@@ -18,22 +73,3 @@ map r reload
 
 map b toggle_page_mode # Toggle dual page mode
 
-unmap u # unmaps u and d for default full-up/down scroll
-unmap d
-map u scroll full-up
-map d scroll full-down
-
-# stop at page boundries
-set scroll-page-aware "true"
-set scroll-full-overlap 0.1
-set scroll-step 5
-
-set highlight-color "rgba(136,192,208,0.5)"
-set highlight-active-color "rgba(236,239,244,0.5)"
-
-# zoom settings
-set zoom-min 5
-set guioptions ""
-
-set statusbar-bg                "#073642" # base02
-set statusbar-fg                "#93a1a1" # base1
