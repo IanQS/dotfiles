@@ -1,0 +1,18 @@
+session_name: Misc
+windows:
+- layout: c923,209x56,0,0,6
+  options:
+    automatic-rename: false
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/Personal/resume
+  window_name: resume
+- focus: 'true'
+  layout: c924,209x56,0,0,7
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: python3.13
+  start_directory: /Users/ianquah/coding_projects/LLM-Training-Puzzles
+  window_name: python3.13

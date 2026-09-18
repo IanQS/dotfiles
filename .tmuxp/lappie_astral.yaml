@@ -1,0 +1,43 @@
+session_name: Astral
+windows:
+- layout: c91e,209x56,0,0,1
+  options:
+    automatic-rename: false
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/coding_projects/new_age/library
+  window_name: NAL-Fixup
+- layout: c91f,209x56,0,0,2
+  options:
+    automatic-rename: false
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/coding_projects/new_age/library/apps/topos
+  window_name: topos
+- layout: c920,209x56,0,0,3
+  options:
+    automatic-rename: false
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/coding_projects/new_age/library/apps/hde
+  window_name: HDE
+- layout: c921,209x56,0,0,4
+  options:
+    automatic-rename: false
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/coding_projects/new_age/library/apps/astral_projections
+  window_name: astral
+- focus: 'true'
+  layout: 858b,209x56,0,0[209x28,0,0,5,209x27,0,29,43]
+  options: {}
+  panes:
+  - 2.1.246
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/coding_projects/new_age/library/backend_and_website
+  window_name: zsh

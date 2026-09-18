@@ -1,0 +1,31 @@
+session_name: blog
+windows:
+- layout: c925,209x56,0,0,8
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/Personal/ianqs.github.io
+  window_name: zsh
+- layout: c926,209x56,0,0,9
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/Personal/ianqs.github.io
+  window_name: zsh
+- layout: 64bf,209x56,0,0,10
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/Personal/ianqs.github.io
+  window_name: zsh
+- focus: 'true'
+  layout: 64c0,209x56,0,0,11
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/dotfiles
+  window_name: zsh

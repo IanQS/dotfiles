@@ -1,0 +1,31 @@
+session_name: compartments
+windows:
+- layout: 64c1,209x56,0,0,12
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/coding_projects/phd_research/synapse_topography
+  window_name: zsh
+- layout: 64c2,209x56,0,0,13
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/coding_projects/compartment_rs
+  window_name: zsh
+- focus: 'true'
+  layout: 64c3,209x56,0,0,14
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/coding_projects/compartment_rs
+  window_name: zsh
+- layout: 64c4,209x56,0,0,15
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/dotfiles
+  window_name: zsh

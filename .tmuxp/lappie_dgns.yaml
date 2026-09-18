@@ -1,0 +1,51 @@
+session_name: dgns
+windows:
+- layout: 64c5,209x56,0,0,16
+  options:
+    automatic-rename: false
+  panes:
+  - focus: 'true'
+    shell_command: 2.1.263
+  start_directory: /Users/ianquah/coding_projects/dgn/dgn_multiclass
+  window_name: dgn_multi
+- layout: 64c6,209x56,0,0,17
+  options:
+    automatic-rename: false
+  panes:
+  - focus: 'true'
+    shell_command: 2.1.241
+  start_directory: /Users/ianquah/coding_projects/dgn
+  window_name: dgn_tmlr
+- layout: e336,103x56,0,0,46
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: 2.1.266
+  start_directory: /Users/ianquah/coding_projects/dgn/dgn_multiclass
+  window_name: 2.1.266
+- layout: 64c4,209x56,0,0,53
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/coding_projects/dgn/dgn_multiclass/cogsci_writeup
+  window_name: zsh
+- layout: 4fdd,209x56,0,0[209x28,0,0,58,209x27,0,29,71]
+  options: {}
+  panes:
+  - shell_command:
+    - cd /Users/ianquah/coding_projects/dgn/dgn_multiclass/cogsci_writeup
+    - zsh
+  - focus: 'true'
+    shell_command:
+    - cd /Users/ianquah
+    - zsh
+  window_name: zsh
+- focus: 'true'
+  layout: 6334,103x56,0,0,72
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: Python
+  start_directory: /Users/ianquah/dotfiles/.tmuxp
+  window_name: zsh

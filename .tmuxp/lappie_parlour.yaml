@@ -1,0 +1,34 @@
+session_name: parlour
+windows:
+- focus: 'true'
+  layout: a43d,209x56,0,0[209x27,0,0{103x27,0,0,20,105x27,104,0,21},209x28,0,28{103x28,0,28,22,105x28,104,28,23}]
+  options: {}
+  panes:
+  - shell_command:
+    - cd /Users/ianquah/coding_projects/parlour
+    - zsh
+  - shell_command:
+    - cd /Users/ianquah/coding_projects/parlour/frontend
+    - zsh
+  - focus: 'true'
+    shell_command:
+    - cd /Users/ianquah/coding_projects/parlour
+    - zsh
+  - shell_command:
+    - cd /Users/ianquah/coding_projects/parlour
+    - zsh
+  window_name: zsh
+- layout: e333,103x56,0,0,24
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/coding_projects/parlour
+  window_name: zsh
+- layout: e334,103x56,0,0,25
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /Users/ianquah/coding_projects/parlour
+  window_name: zsh
