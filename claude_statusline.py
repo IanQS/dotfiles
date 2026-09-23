@@ -32,17 +32,24 @@ def get_git_info(cwd):
         return ""
 
 def format_directory(cwd, project_dir):
-    """Show relative path from project root, or just folder name."""
+    """Return (project_name, relative_path or current_dir)."""
     cwd_path = Path(cwd)
     project_path = Path(project_dir)
 
+    # Get project name (last folder in project_dir)
+    project_name = project_path.name
+
     try:
-        # If inside project, show relative path
+        # If inside project, get relative path
         rel = cwd_path.relative_to(project_path)
-        return str(rel) if str(rel) != '.' else '.'
+        rel_str = str(rel)
+        # If at project root, return just project name
+        if rel_str == '.':
+            return project_name, ""
+        return project_name, rel_str
     except ValueError:
-        # Outside project, just show folder name
-        return cwd_path.name
+        # Outside project, show current folder
+        return project_name, cwd_path.name
 
 def make_context_bar(pct, width=10):
     """Create a progress bar: [████░░░░░░] 45%"""
@@ -116,18 +123,21 @@ def main():
     cwd = data['workspace']['current_dir']
     project_dir = data['workspace']['project_dir']
 
-    # Line 1: Model, Directory, Git
-    display_dir = format_directory(cwd, project_dir)
+    # Line 1: Model, Project/Directory, Git
+    project_name, rel_path = format_directory(cwd, project_dir)
     git_info = get_git_info(cwd)
 
     CYAN = '\033[36m'
     RESET = '\033[0m'
 
-    line1 = f"{CYAN}[{model}]{RESET}"
-    if display_dir != ".":
-        line1 = line1 + f"\t Dir: {display_dir}"
+    # Build line 1: [Model] project_name / rel_path | branch
+    line1_parts = [f"{CYAN}[{model}]{RESET}", project_name]
+    if rel_path:
+        line1_parts.append(rel_path)
     if git_info:
-        line1 = line1 + f"\t Git:{git_info}"
+        line1_parts.append(git_info)
+
+    line1 = " | ".join(line1_parts)
 
     # Output both lines
     line2 = line2_builder(data, RESET)
