@@ -66,6 +66,7 @@ antigen apply
 export HISTSIZE=10000
 export SAVEHIST=10000
 export HISTFILE=~/.zhistory
+export OPENROUTER_API_KEY="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"
 setopt INC_APPEND_HISTORY SHARE_HISTORY HIST_IGNORE_DUPS EXTENDED_HISTORY
 
 # Modern Command Replacements
