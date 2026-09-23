@@ -4,7 +4,6 @@
     "allow": [
       "Read(./**)",
       "Edit(./**)",
-      "Write(./**)",
       "Bash(cd:*)",
       "Bash(ls:*)",
       "Bash(pwd:*)",
@@ -38,7 +37,7 @@
       "Bash(git push:*)",
       "Bash(git pull:*)",
       "Bash(git fetch:*)",
-      "Bash(git clone:*)",
+      "Bash(git clone:*)"
     ]
   },
   "hooks": {
@@ -76,8 +75,24 @@
     "swift-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
-    "pyright-lsp@claude-plugins-official": true
+    "pyrefly-lsp@pyrefly-plugins": true
   },
+  "agentPushNotifEnabled": true,
+  "extraKnownMarketplaces": {
+    "pyrefly-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "lolpack/pyrefly-lsp"
+      }
+    }
+  },
+  "modelSettings": {
+    "claude-fable-5-1": {
+      "effortLevel": "high"
+    }
+  },
+  "tui": "fullscreen",
+  "skipWorkflowUsageWarning": true,
   "theme": "dark",
   "editorMode": "vim",
   "preferredNotifChannel": "iterm2",

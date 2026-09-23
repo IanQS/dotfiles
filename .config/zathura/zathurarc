@@ -55,6 +55,11 @@ set render-loading-fg "#2b2b2b"
 set statusbar-bg "#1e1e1e"
 set statusbar-fg "#ffffff"
 
+set statusbar-basename true
+set statusbar-home-tilde true
+set window-title-basename true
+set window-title-page true
+set window-title-home-tilde true
 
 ##############################
 # @Keybindings
