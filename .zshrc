@@ -73,7 +73,7 @@ setopt INC_APPEND_HISTORY SHARE_HISTORY HIST_IGNORE_DUPS EXTENDED_HISTORY
 alias ls='eza'
 alias la='eza -lah'
 alias ollamaLogs='journalctl -u ollama --no-pager --follow --pager-end'
-alias diff='delta'
+alias diff='hunk diff --files'
 alias vim='hx'
 alias top='bottom'
 alias cat='bat'
