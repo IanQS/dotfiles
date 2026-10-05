@@ -21,7 +21,6 @@ feature_paths = false                # enable path completion
 feature_citations = false            # enable citation completion (only on `citation` feature enabled)
 
 
-
 ########################################
 # LANGUAGE: PYTHON
 #########################################
@@ -128,15 +127,11 @@ split-on-trailing-comma = false
 
 [[language]]
 auto-format = true
-# language-servers = ["marksman", "mpls", "scls", "markdown-oxi"]
 language-servers = ["scls", "marksman", "mpls"]#,"markdown-oxide"  ]#, "mpls"]#,]
 name = "markdown"
 formatter = { command = "prettier", args = ["--parser", "markdown"] }
 
 
-[language-server.mpls]
-command = "mpls"
-args = ["--theme", "dracula","--enable-emoji", "--enable-wikilinks", "--full-sync", "--port", "8090", "--tabs", "--no-auto", "--enable-footnotes"]
 
 
 #########################################

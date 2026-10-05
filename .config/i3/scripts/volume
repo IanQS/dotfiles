@@ -43,4 +43,4 @@ else
 fi
 
 # Single-line output for i3blocks
-echo "${SYMB} ${VOL}%"
+echo "${SYMB}   ${VOL}%"
