@@ -1,0 +1,35 @@
+session_name: misc
+windows:
+- layout: 64c6,209x56,0,0,55
+  options:
+    automatic-rename: false
+  panes:
+  - focus: 'true'
+    shell_command: htop
+  start_directory: /home/iq/research
+  window_name: admin
+- layout: b564,230x52,0,0,7
+  options:
+    automatic-rename: false
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/iq/Documents/Lab Notebook
+  window_name: lab_nb
+- layout: 329d,209x56,0,0,199
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: claude
+  start_directory: /home/iq/Documents/personal_vault
+  window_name: claude
+- focus: 'true'
+  layout: 8f55,114x52,0,0[114x26,0,0,271,114x25,0,27,273]
+  options: {}
+  panes:
+  - shell_command:
+    - cd /home/iq/dotfiles/.tmuxp
+    - zsh
+  - focus: 'true'
+    shell_command: cd /home/iq/dotfiles/.tmuxp/desktop
+  window_name: zsh

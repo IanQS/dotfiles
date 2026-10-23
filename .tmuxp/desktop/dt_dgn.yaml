@@ -1,0 +1,34 @@
+session_name: dgn
+windows:
+- layout: e37d,209x56,0,0[209x27,0,0,1,209x28,0,28,2]
+  options:
+    automatic-rename: false
+  panes:
+  - htop
+  - focus: 'true'
+    shell_command: nvtop
+  start_directory: /home/iq
+  window_name: admin
+- layout: c920,209x56,0,0,3
+  options:
+    automatic-rename: false
+  panes:
+  - focus: 'true'
+    shell_command: claude
+  start_directory: /home/iq/research/dgn_multiclass
+  window_name: cli
+- focus: 'true'
+  layout: e4c8,209x56,0,0,86
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/iq/research/dgn/instructions
+  window_name: zsh
+- layout: ada5,230x52,0,0,106
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/iq/research/dgn
+  window_name: zsh

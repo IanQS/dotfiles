@@ -1,0 +1,29 @@
+session_name: prh
+windows:
+- layout: 4d89,230x51,0,0[230x25,0,0,98,230x25,0,26,121]
+  options:
+    automatic-rename: false
+  panes:
+  - htop
+  - focus: 'true'
+    shell_command: nvtop
+  start_directory: /home/iq/research/neuro-prh
+  window_name: cli
+- focus: 'true'
+  layout: 8832,209x56,0,0[209x28,0,0,12,209x27,0,29,214]
+  options:
+    automatic-rename: false
+  panes:
+  - claude
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/iq/research/neuro-prh
+  window_name: marimo_sim_analysis
+- layout: 5ae2,230x52,0,0,13
+  options:
+    automatic-rename: false
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/iq/research/neuro-prh/studentb_prompts/potentials
+  window_name: main

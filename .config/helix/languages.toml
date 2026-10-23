@@ -127,7 +127,8 @@ split-on-trailing-comma = false
 
 [[language]]
 auto-format = true
-language-servers = ["scls", "marksman", "mpls"]#,"markdown-oxide"  ]#, "mpls"]#,]
+language-servers = ["scls", "marksman", "mpls"]
+# language-servers = ["scls", "marksman"]
 name = "markdown"
 formatter = { command = "prettier", args = ["--parser", "markdown"] }
 

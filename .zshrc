@@ -71,7 +71,7 @@ setopt INC_APPEND_HISTORY SHARE_HISTORY HIST_IGNORE_DUPS EXTENDED_HISTORY
 
 # Modern Command Replacements
 alias ls='eza'
-alias rg='rg --hidden'
+alias rg='rg -i --hidden'
 alias la='eza -lah'
 alias ollamaLogs='journalctl -u ollama --no-pager --follow --pager-end'
 alias diff='hunk diff --files'

@@ -1,0 +1,33 @@
+session_name: syn_top
+windows:
+- layout: dae0,230x52,0,0,21
+  options:
+    automatic-rename: false
+  panes:
+  - focus: 'true'
+    shell_command: claude
+  start_directory: /home/iq/research/synapse_topography
+  window_name: cli
+- layout: dae3,230x52,0,0,24
+  options:
+    automatic-rename: false
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/iq/research/synapse_topography
+  window_name: src
+- layout: adaa,230x52,0,0,149
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/iq/research/synapse_topography
+  window_name: zsh
+- focus: 'true'
+  layout: 6da5,230x52,0,0,272
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: bash
+  start_directory: /home/iq/research/synapse_topography
+  window_name: bash

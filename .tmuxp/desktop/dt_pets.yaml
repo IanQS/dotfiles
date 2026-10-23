@@ -1,0 +1,38 @@
+session_name: PETs
+windows:
+- focus: 'true'
+  layout: 7292,209x56,0,0,212
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: claude
+  start_directory: /home/iq/personal/pets_company_tracker
+  window_name: claude
+- layout: ada7,230x52,0,0,165
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/iq/personal/pets_company_tracker
+  window_name: zsh
+- layout: 6daa,230x52,0,0,239
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/iq/personal/pets_company_tracker
+  window_name: zsh
+- layout: eda9,230x52,0,0,248
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: git
+  start_directory: /home/iq/personal/pets_company_tracker
+  window_name: git
+- layout: f296,209x56,0,0,264
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/iq/personal/pets_company_tracker
+  window_name: zsh

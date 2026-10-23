@@ -5,3 +5,4 @@ package.json
 .config/helix/external-snippets
 .DS_Store
 .config/hunk/state.json.corrupt
+.config/hunk/state.json
