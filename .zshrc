@@ -124,15 +124,16 @@ eval "$(uvx --generate-shell-completion zsh)"
 
 case "$(uname -sr)" in
     Darwin*)
-	export PATH="$(brew --prefix)/opt/llvm/bin:$PATH" # Needs to be here, if not brew isn't detected properly
-	# bun completions
-	[ -s "/Users/ianquah/.bun/_bun" ] && source "/Users/ianquah/.bun/_bun"
-        ;;
+        export PATH="$(brew --prefix)/opt/llvm/bin:$PATH" # Needs to be here, if not brew isn't detected properly
+        # bun completions
+        [ -s "/Users/ianquah/.bun/_bun" ] && source "/Users/ianquah/.bun/_bun"
+        [ -f "/Users/ianquah/.ghcup/env" ] && . "/Users/ianquah/.ghcup/env" # ghcup-env
+    ;;
     Linux*)
-    export HELIX_RUNTIME=~/helix/runtime
-    . "$HOME/.local/bin/env"
-    # Added by the Hunk installer (https://hunk.dev)
-    export PATH='/home/iq/.hunk/bin':"$PATH"
+        export HELIX_RUNTIME=~/helix/runtime
+        . "$HOME/.local/bin/env"
+        # Added by the Hunk installer (https://hunk.dev)
+        export PATH='/home/iq/.hunk/bin':"$PATH"
         ;;
 esac
 
@@ -149,4 +150,5 @@ function y() {
 	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
 	command rm -f -- "$tmp"
 }
+
 

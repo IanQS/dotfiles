@@ -236,3 +236,22 @@ formatter = { command = "ocamlformat", args = [
   "--impl",
   # "--enable-outside-detected-project", # Enable only if you want to format files outside of projects
 ] }
+
+#########################################
+# LANGUAGE: Haskell
+#########################################
+
+
+[[language]]
+name = "haskell"
+language-id = "haskell"
+auto-format = true
+file-types = ["hs"]
+comment-token = "--"
+language-servers = ["haskell-language-server-wrapper"]
+roots = ["Setup.hs", "stack.yaml", "*.cabal"]
+formatter = { command = "stylish-haskell", args = [] }
+
+[language-server.haskell-language-server-wrapper]
+command = "haskell-language-server-wrapper"
+args = ["--lsp"]
