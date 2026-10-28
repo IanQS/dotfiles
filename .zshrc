@@ -1,44 +1,56 @@
 # ~/.zshrc
 # Configuration for interactive shells
 
+# keychain may prompt for the key's passphrase, so it has to run before the instant prompt
+if [[ $OSTYPE == linux* ]]; then
+    eval "$(keychain --eval --quiet id_ed25519)"
+fi
+
 # Enable Powerlevel10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # Load plugin manager
-case "$(uname -sr)" in
-    Darwin*)
-        source ~/antigen.zsh
-        ;;
-    Linux*)
-        eval "$(keychain --eval --quiet id_ed25519)"
+source ~/antigen.zsh || source /usr/share/zsh/share/antigen.zsh
 
-        source ~/antigen.zsh || source /usr/share/zsh/share/antigen.zsh
+# tmuxp session files: ~/.tmuxp/desktop on the work desktop (Linux), ~/.tmuxp/laptop on the Mac
+case $OSTYPE in
+    linux*)
+        TMUXP_SESSIONS_DIR=~/.tmuxp/desktop
+        ;;
+    darwin*)
+        TMUXP_SESSIONS_DIR=~/.tmuxp/laptop
         ;;
 esac
 
-# Load tmuxp sessions: dt_*.yaml on the work desktop (Linux), everything else on the Mac
+# Load every saved tmuxp session for this machine
 loadTmux() {
-    setopt localoptions extendedglob
-    local tmuxp_dir=~/.tmuxp
     local -a files
-
-    case "$(uname -sr)" in
-        Linux*)
-            files=($tmuxp_dir/dt_*.yaml(N))
-            ;;
-        Darwin*)
-            files=($tmuxp_dir/*.yaml~$tmuxp_dir/dt_*.yaml(N))
-            ;;
-    esac
+    files=($TMUXP_SESSIONS_DIR/*.yaml(N))
 
     if (( ${#files[@]} == 0 )); then
-        echo "loadTmux: no matching tmuxp session files found in $tmuxp_dir"
+        echo "loadTmux: no tmuxp session files found in $TMUXP_SESSIONS_DIR"
         return 1
     fi
 
     tmuxp load "${files[@]}"
+}
+
+# Save every running tmux session to $TMUXP_SESSIONS_DIR/<session name, lowercased>.yaml
+saveTmux() {
+    local -a sessions
+    sessions=(${(f)"$(tmux list-sessions -F '#{session_name}' 2>/dev/null)"})
+
+    if (( ${#sessions[@]} == 0 )); then
+        echo "saveTmux: no running tmux sessions"
+        return 1
+    fi
+
+    local session
+    for session in "${sessions[@]}"; do
+        tmuxp freeze "$session" -y -o "$TMUXP_SESSIONS_DIR/${session:l}.yaml"
+    done
 }
 
 # Plugin Configuration
@@ -66,8 +78,10 @@ antigen apply
 export HISTSIZE=10000
 export SAVEHIST=10000
 export HISTFILE=~/.zhistory
-export OPENROUTER_API_KEY="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"
-setopt INC_APPEND_HISTORY SHARE_HISTORY HIST_IGNORE_DUPS EXTENDED_HISTORY
+setopt SHARE_HISTORY HIST_IGNORE_DUPS EXTENDED_HISTORY
+
+# API keys and other secrets live outside this (public) repo
+[[ -r ~/.zsh_secrets ]] && source ~/.zsh_secrets
 
 # Modern Command Replacements
 alias ls='eza'
@@ -76,12 +90,11 @@ alias la='eza -lah'
 alias ollamaLogs='journalctl -u ollama --no-pager --follow --pager-end'
 alias diff='hunk diff --files'
 alias vim='hx'
-alias top='bottom'
+alias top='btm'
 alias cat='bat'
 alias nvim='hx'
 
 # Development Aliases
-alias cleanDeadSymlinks='for f in `find -L $DIR -maxdepth 1 -type l`; do unlink $f; done'
 alias ggraph='git-graph'
 alias gpuWatcher='gpustat -cp --watch'
 
@@ -92,7 +105,13 @@ alias screenReset="xrandr -s 0"
 # Build System
 alias build="mkdir build; cd build; cmake ..; make -j 4; cd ../"
 alias rebuild="cd build; cmake ..; make -j 6; cd ../"
-alias claude-mem='bun "/Users/ianquah/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'
+
+# Remove broken symlinks in the given directory (default: current directory)
+cleanDeadSymlinks() {
+    local -a dead
+    dead=(${1:-.}/*(ND-@))
+    (( ${#dead[@]} )) && rm -- "${dead[@]}"
+}
 
 # Tool Initialization
 zvm_after_init_commands+=('source <(fzf --zsh)')
@@ -103,41 +122,23 @@ eval "$(uvx --generate-shell-completion zsh)"
 # Theme Configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-[[ ! -r '/Users/ianquah/.opam/opam-init/init.zsh' ]] || source '/Users/ianquah/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
-
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/iq/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/home/iq/miniconda3/etc/profile.d/conda.sh" ]; then
-#         . "/home/iq/miniconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/home/iq/miniconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# <<< conda initialize <<<
-
-case "$(uname -sr)" in
-    Darwin*)
+case $OSTYPE in
+    darwin*)
         export PATH="$(brew --prefix)/opt/llvm/bin:$PATH" # Needs to be here, if not brew isn't detected properly
         # bun completions
         [ -s "/Users/ianquah/.bun/_bun" ] && source "/Users/ianquah/.bun/_bun"
-        [ -f "/Users/ianquah/.ghcup/env" ] && . "/Users/ianquah/.ghcup/env" # ghcup-env
-    ;;
-    Linux*)
+        [[ ! -r '/Users/ianquah/.opam/opam-init/init.zsh' ]] || source '/Users/ianquah/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+        alias claude-mem='bun "/Users/ianquah/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'
+        ;;
+    linux*)
         export HELIX_RUNTIME=~/helix/runtime
         . "$HOME/.local/bin/env"
         # Added by the Hunk installer (https://hunk.dev)
         export PATH='/home/iq/.hunk/bin':"$PATH"
+
+        [ -f "/home/iq/.ghcup/env" ] && . "/home/iq/.ghcup/env" # ghcup-env
         ;;
 esac
-
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -150,5 +151,3 @@ function y() {
 	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
 	command rm -f -- "$tmp"
 }
-
-
