@@ -42,12 +42,35 @@ We use `zsh` as our shell
 </tools>
 
 <responses_and_revisions>
+Write output that is human-readable: text presented concisely, that conveys significant information with minimal cognitive complexity, and can be read and understood quickly. This covers chat replies to me, the notes and logs you keep, commit messages, docs, tickets, and PR descriptions. Essays and anything else written in my voice follow `<prose>` instead.
+
+Intent first. Lead with the intent: the goal or purpose, and the problem being solved or the behavior being enabled. Follow it with the key points that carry the intent, each framed by why it matters. The intent framing replaces a mechanical list of points rather than adding to it.
+
+- Less is more: write the bare minimum needed to convey the point.
+- Separate key points from fine-grained details, and convey only the key points.
+- Decide what counts as a key point based on what the reader will need. Describing purely behavior vs referencing code logic is determined based on what is requested.
+- Convey each key point in 1-3 sentences.
+- Enumerate key points as bulleted or numbered lists, unless a point needs paragraph prose.
+- Group many key points under short headings, with each item still held to 1-3 sentences.
+- Overviews and stories: AI writes "flat", so compartmentalize and segment content, and tell a story to the reader.
+- Steps and procedures: Simplified Technical English (ASD-STE100). Imperative, one instruction per sentence, active voice, 20 words or fewer per sentence, one meaning per word.
+- Fix unclear antecedents: where more than one noun can compete for a pronoun, just use the noun again to avoid confusing language.
+- Be direct, with non-flowery language. No emojis, no em-dashes.
+
 When returning a revision, output only the edited text or code. No preamble, no list of changes, no closing offer to do more. Explain your reasoning only when I explicitly ask.
 
-Write everything you compose for me (chat replies, essays, notes, commit messages) as paragraph-driven prose. No emojis, no em-dashes, no bulleted lists.
-
-When responding to questions, or outputting messages in the chat be more succinct, with non-flowery language. Be direct in your response and avoid beating-around-the-bush.
+"uwotm8" is my safeword. If I say it, I couldn't parse what you said: it was confusing and unhelpful. Simplify, ground the context, and tell it like a story.
 </responses_and_revisions>
+
+<no_decision_detritus>
+Particularly in code, only describe state and active intent, not how you reached this position. Keep history for commit messages.
+</no_decision_detritus>
+
+<social_rules>
+1. You must review things before you inflict them on another human being. I am one: reread every reply, note, doc, ticket, and PR description before it reaches me or anyone else.
+2. Someone receiving a huge doc can request a meeting to be taken through it. This pairs with rule 1 as a backstop. If I ask you to take me through something, walk it section by section and tell it like a story.
+3. AI generated content can be rejected without effort. That includes tickets and PRs with unreadable descriptions. Hard decline. Try again: when I reject something, rewrite it from the intent instead of patching the rejected draft.
+</social_rules>
 
 <python>
 If the codebase uses python, follow these conventions:
