@@ -129,14 +129,15 @@ case $OSTYPE in
         [ -s "/Users/ianquah/.bun/_bun" ] && source "/Users/ianquah/.bun/_bun"
         [[ ! -r '/Users/ianquah/.opam/opam-init/init.zsh' ]] || source '/Users/ianquah/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
         alias claude-mem='bun "/Users/ianquah/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'
+        [ -f "/Users/ianquah/.ghcup/env" ] && . "/Users/ianquah/.ghcup/env" # ghcup-env
         ;;
     linux*)
         export HELIX_RUNTIME=~/helix/runtime
         . "$HOME/.local/bin/env"
         # Added by the Hunk installer (https://hunk.dev)
         export PATH='/home/iq/.hunk/bin':"$PATH"
-
         [ -f "/home/iq/.ghcup/env" ] && . "/home/iq/.ghcup/env" # ghcup-env
+
         ;;
 esac
 
@@ -151,3 +152,4 @@ function y() {
 	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
 	command rm -f -- "$tmp"
 }
+
