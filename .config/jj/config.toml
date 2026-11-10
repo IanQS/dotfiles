@@ -1,0 +1,9 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+name = "IQ"
+email = "ian@ianq.ai"
+
+[ui]
+pager = ["hunk", "pager"]
+diff-formatter = ":git"
